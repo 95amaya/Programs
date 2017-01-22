@@ -1,0 +1,79 @@
+Script started on Thu 20 Oct 2016 07:39:00 PM CDT
+[4mfox04[24m:[1m~/Desktop/SetLibrary[0m> driverArray
+Set Simulation (type H for help)
+Enter positive integers for set A (-1 to exit, press enter after each number)
+> 1 2
+> 3
+> 1
+> -1
+Enter positive integers for set B (-1 to exit, press enter after each number)
+> 4
+> 5
+> 3
+> -1
+Enter a Command for set arithmetic (type H for help)
+> H
+  Q -- Quit the program
+  H -- Display this help message
+  U -- Perform a union of sets (A U B)
+  I -- Perform an intersection between sets A and B
+  D -- Perform a difference of sets (A - B)
+Enter a Command for set arithmetic (type H for help)
+> U
+Union
+A: 1, 2, 3
+B: 3, 4, 5
+C: 1, 2, 3, 4, 5
+Enter a Command for set arithmetic (type H for help)
+> I
+Intersection
+A: 1, 2, 3
+B: 3, 4, 5
+C: 3
+Enter a Command for set arithmetic (type H for help)
+> D
+Difference
+A: 1, 2, 3
+B: 3, 4, 5
+C: 1, 2
+Enter a Command for set arithmetic (type H for help)
+> Q
+Exiting Program
+[4mfox04[24m:[1m~/Desktop/SetLibrary[0m> driverArray[K[K[K[K[KList
+Set Simulation (type H for help)
+Enter positive integers for set A (-1 to exit, press enter after each number)
+> 5
+> 2
+> 1
+> 4
+> 3
+> -1
+Enter positive integers for set B (-1 to exit, press enter after each number)
+> 46 
+> 6
+> 2
+> -1
+Enter a Command for set arithmetic (type H for help)
+> U
+Union
+A: 1, 2, 3, 4, 5
+B: 2, 4, 6
+C: 1, 2, 3, 4, 5, 6
+Enter a Command for set arithmetic (type H for help)
+> I
+Intersection
+A: 1, 2, 3, 4, 5
+B: 2, 4, 6
+C: 2, 4
+Enter a Command for set arithmetic (type H for help)
+> D
+Difference
+A: 1, 2, 3, 4, 5
+B: 2, 4, 6
+C: 1, 3, 5
+Enter a Command for set arithmetic (type H for help)
+> Q
+Exiting Program
+[4mfox04[24m:[1m~/Desktop/SetLibrary[0m> ^Dexit
+
+Script done on Thu 20 Oct 2016 07:41:36 PM CDT

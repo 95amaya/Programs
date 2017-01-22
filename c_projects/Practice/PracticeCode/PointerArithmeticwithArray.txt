@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	int x[4] = {1, 2, 3, 4};
+	int *p = x;
+	
+	printf("p = %p, *p = %i\n", p, *p); // x[0]
+	*++p;
+	printf("p = %p, *p = %i\n", p, *p); // x[1]
+	++*p;
+	printf("p = %p, *p = %i\n", p, *p); // x[1]++
+	p++;
+	printf("p = %p, *p = %i\n", p, *p); // x[2]
+	*p++;
+	printf("p = %p, *p = %i\n", p, *p); // x[3]
+	
+	return 0;
+}

@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void rowCheck(int *iPuzzle, int iRow, int iLength, char *cRowCheck); //populates RowCheck array with count
+
+int main(void) {
+	// your code goes here
+	int data1[9], i; 
+    
+   // char cRowCheck[10], cColumnCheck[10], cBoxCheck[10];
+    char cValueCheck = {0};
+   //	char cRowCheck = {0};
+   // char cColumnCheck = {0};
+   // char cBoxCheck = {0};
+    
+   	/* Intializes random number generator */
+   	time_t t;
+   	srand((unsigned) time(&t));
+
+    
+    for (i=0; i<9; i++)
+    	data1[i] = rand() % 9 + 1;
+ 
+	iPrintArray(data1, 9);
+	return 0;
+}
+
+void iPrintArray(int *data, int length)
+{
+	int i, k;
+	for(i = 0; i < length; i++)
+		printf("%d ", data[i]);
+	printf("\n");
+}
+
+void cPrintArray(char *data, int length)
+{
+	int i, k;
+	for(i = 0; i < length; i++)
+		printf("%d ", data[i]);
+	printf("\n");
+}
+
+void rowCheck(int *iPuzzle, int iRow, int iLength, char *cValueCheck)
+{
+	int j;
+	for(j = 0; j < iLength; j++)
+	{
+		cValueCheck[iPuzzle[iRow][j]]++;
+	}
+	
+	cPrintArray(cValueCheck, 10);
+}

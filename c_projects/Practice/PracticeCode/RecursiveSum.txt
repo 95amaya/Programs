@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+#define SIZE 5
+
+int sum(int array[], int size);
+
+int main(void) {
+	srand(time(NULL));
+	int r = rand();    //returns a pseudo-random integer between 0 and RAND_MAX
+	int i = 0;
+	
+	int array[SIZE];// = {1,2,4,7,5,6};
+	for(i =0; i < SIZE; i++)
+	{
+		r = rand() % 10;
+		array[i] = r;
+	}
+
+	// recursive sum
+	printArray(array, SIZE);
+	printf("Array Sum: %d\n", sum(array, SIZE));
+
+	return 0;
+}
+
+void printArray(int array[], int size)
+{
+	int i;
+	for(i = 0; i < size; i++)
+	{
+		if(i < size-1)
+			printf("%d, ", array[i]);
+		else
+			printf("%d\n", array[i]);
+	}
+
+}
+
+// Recursive Array Sum
+int sum(int array[], int size)
+{
+	if(size-1 == 0)
+		return array[size-1];
+	return array[size-1] + sum(array, size-1);
+}

@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void printArray(char *cCounter, int iLength); // Print char array
+void ResetCounter(char *cCounter, int iLength); // Set counter array = 0
+void compareCounters(char *cRowCounter, char *cColumnCounter, char *cBoxCounter);
+
+int main(void) {
+
+	// initialize variables
+	char iPuzzle[9][9] = {0};
+	int i, j, iRow, iColumn, iChoice, iScanfCount, temp;
+	i = j = iRow = iColumn = iChoice = iScanfCount = temp = 0;
+    
+    printf("Sudoku puzzle (1) or solution (2)? ");
+    iScanfCount = scanf("%d", &iChoice);
+    
+    if(iScanfCount == 0)
+    {
+    	printf("Invalid integer\n");
+    	return 0;
+    }
+    else if(iChoice == 1 || iChoice == 2)
+    {
+    	int iCount = 0;
+    	temp = -1;
+    	printf("\nEnter %s", iChoice == 1 ? "Puzzle:\n": "Solution:\n");
+    	for(i = 0; i < 9; i++)
+    	{
+    		for(j = 0; j < 9; j++)
+    		{
+    			scanf("%d", &temp);
+    			iPuzzle[i][j] = temp;
+    		}
+    	}
+    	
+    	
+    }
+    else
+    {
+    	printf("Invalid option");
+    	return 0;
+    }
+    
+    //Print int array
+    for (i=0; i<9; i++)
+    {
+    	for(j=0; j<9; j++)
+    		printf("%d ", iPuzzle[i][j]);
+    	printf("\n");
+    }
+	printf("\n");
+	return 0;
+}

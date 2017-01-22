@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void) {
+	// your code goes here
+	int iPuzzle[9][9] = {0};
+	int i, j;
+    
+   // char cRowCheck[10], cColumnCheck[10], cBoxCheck[10];
+    char cValueCounter[10] = {0};
+    
+   	/* Intializes random number generator */
+   	time_t t;
+   	srand((unsigned) time(&t));
+
+	// Populate puzzle with random numbers
+    for (i=0; i<9; i++)
+    {
+    	for(j=0; j<9; j++)
+    		iPuzzle[i][j] = rand() % 9;
+    }
+    
+    // Print int array
+    for (i=0; i<9; i++)
+    {
+    	for(j=0; j<9; j++)
+    		printf("%d ", iPuzzle[i][j]);
+    	printf("\n");
+    }
+	printf("\n");
+	
+	// Populate char array for row check 
+	for(j = 0; j < 9; j++)
+		cValueCounter[iPuzzle[0][j]]++;
+	
+	// Populate char array for column check
+	for(i = 0; i < 9; i++)
+		cValueCounter[iPuzzle[i][0]]++;
+	
+	// Populate char array for 3X3 box check
+	for(i = 0; i < 3; i++)
+    {
+    	for(j = 0; j < 3; j++)
+    	{
+    		if(cValueCounter[iPuzzle[i][j]] == 0)
+    			cValueCounter[iPuzzle[i][j]]++;
+    	}
+    }
+    
+	// Print char array
+	printf("RowCheck + ColumnCheck + BoxCheck\n");
+	for(i = 0; i < 10; i++)
+		printf("%d ", cValueCounter[i]);
+	printf(" = IndecesCounted\n");
+	
+	// Print index reference
+	for(i = 0; i < 10; i++)
+		printf("%d ", i);
+	printf(" = Indeces\n");
+	
+	// Possible Values
+ 	printf("[0][0]:");
+ //	if(iPuzzle[0][0] == 0)
+ //	{
+ 		for(i = 1; i < 10; i++)
+ 		{
+ 			if(cValueCounter[i] == 0)
+ 				printf(" %d", i);
+ 		}
+ 		printf("\n");
+ //	}
+	return 0;
+}

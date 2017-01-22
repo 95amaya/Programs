@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	int data1[10], done, i, k; 
+     for (i=0; i<10; i++)
+       data1[i] = rand();
+
+	topBottomSum(data1, 10);
+     printf("%d", sizeof data1);
+     
+    
+
+	return 0;
+}
+
+int topBottomSum(int data[], int length)
+{
+	int sum;
+	int i, k;
+	
+	for(i = 0; i < length; i++)//k = length-1; i<k; i++, k--)
+	{
+	//	sum = data[i] + data[k];
+	//	printf("Sum of %d + %d = %d \n", data[i], data[k], sum);
+		printf("%d \n", data[i]);
+	}
+}

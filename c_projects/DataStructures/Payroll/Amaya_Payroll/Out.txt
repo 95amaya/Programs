@@ -1,0 +1,24 @@
+Script started on Sun 18 Sep 2016 05:05:24 PM CDT
+[4mfox04[24m:[1m~/working/cs2121/Labs/Payroll[0m> ./run
+How many employees: ^[[B    2
+Employee #1
+	Name: Ebenexer   zer
+	Title: Parter  ner
+	SSN: 271-82-8183
+	Salary: 250.00
+	Withholding exceptions: 1
+Employee #2
+	Name: Bob
+	Title: Clear  rk
+	SSN: 314-15-9265
+	Salary: 15.o 00
+	Withholding exceptions: 7
+
+Name                     Gross       Tax         Net
+----------------------------------------------------
+Ebenezer                250.00  -  62.25   =  187.75
+Bob                      15.00  -   2.00   =   13.00
+
+[4mfox04[24m:[1m~/working/cs2121/Labs/Payroll[0m> ^Dexit
+
+Script done on Sun 18 Sep 2016 05:07:14 PM CDT

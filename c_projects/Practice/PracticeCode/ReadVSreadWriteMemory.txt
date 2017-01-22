@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	char *a = "run";
+	char b[3] = {'r', 'u', 'n'};
+	
+	char *end = b;
+//	printf("%c\n", *end);
+	while(*end != '\0')
+	{
+		printf("%c ", *end);
+		end++;
+	}
+	
+	// run time error
+	//a[1] = 'a';	// Won't run because string is in code memory (read only) not data memory (read/write)
+	a = "hi";		// Works because a pointer is in data memory;
+	
+	// compile time error
+	//b = "hi"; 	// Won't compile because pointer is in code memory
+	b[1] = 'a';		// Works because string is in data memory
+	
+	return 0;
+}

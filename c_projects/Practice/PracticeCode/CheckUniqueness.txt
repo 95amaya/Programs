@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+#define SIZE 5
+void printArray(int array[], int size);
+int	checkifUnique(int *array, int n);
+
+int main(void) {
+	srand(time(NULL));
+	int r = rand();    //returns a pseudo-random integer between 0 and RAND_MAX
+	int i = 0;
+	
+	int array[SIZE];// = {1,2,4,7,5,6};
+	for(i =0; i < SIZE; i++)
+	{
+		r = rand() % 25;
+		array[i] = r;
+	}
+	int *parray;
+
+	parray = &array[0];
+	printArray(array, SIZE);
+	printf("Unique Array: %d", checkifUnique(parray, SIZE));
+	return 0;
+}
+
+void printArray(int array[], int size)
+{
+	int i;
+	for(i = 0; i < size; i++)
+	{
+		if(i < size-1)
+			printf("%d, ", array[i]);
+		else
+			printf("%d\n", array[i]);
+	}
+
+}
+
+int	checkifUnique(int *array, int n){
+	int i, j;
+	for(i = 0; i < n; i++)
+	{
+		for(j = i+1; j < n; j++)
+			if(array[i] == array[j])
+				return 0;
+	}
+	return 1;
+}

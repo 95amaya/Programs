@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void) {
+	// your code goes here
+//	int iPuzzle[9][9] = {0};
+	int i, j;
+    
+   // char cRowCheck[10], cColumnCheck[10], cBoxCheck[10];
+    char cValueCounter1[10] = {0};
+    char cValueCounter2[10] = {0};
+    
+   	/* Intializes random number generator */
+   	time_t t;
+   	srand((unsigned) time(&t));
+
+	// Populate puzzle with random numbers
+    for (i=0; i<10; i++)
+    {
+    	cValueCounter1[i] = rand() % 2;
+    	cValueCounter2[i] = rand() % 2;
+    }
+
+	// Print char array
+	for(i = 0; i < 10; i++)
+		printf("%d ", cValueCounter1[i]);
+	printf(" = IndecesCounted\n");
+	
+	for(i = 0; i < 10; i++)
+		printf("%d ", cValueCounter2[i]);
+	printf(" = IndecesCounted\n");
+	
+	// Print index reference
+	for(i = 0; i < 10; i++)
+		printf("%d ", i);
+	printf(" = Indeces\n");
+	
+	int index;
+	char cPossibleValue;
+	cPossibleValue = 1;
+	for(index = 0; index < 10; index++)
+	{
+		cPossibleValue = cValueCounter1[index] || cValueCounter2[index];
+	//	if(cPossibleValue == 0)
+		//	printf("%d ", index);
+			printf("%d ", cPossibleValue);
+	}
+	printf(" = Possible Values:");
+	printf("\n");
+	return 0;
+}

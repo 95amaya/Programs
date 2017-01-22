@@ -1,0 +1,118 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void) {
+	// your code goes here
+	int iPuzzle[9][9] = {0};
+	int i, j, iRow, iColumn;
+    
+   // char cRowCheck[10], cColumnCheck[10], cBoxCheck[10];
+    char cRowCounter[10] = {0};
+    char cColumnCounter[10] = {0};
+    char cBoxCounter[10] = {0};
+    
+   	/* Intializes random number generator */
+   	time_t t;
+   	srand((unsigned) time(&t));
+
+	// Populate puzzle with random numbers
+    for (i=0; i<9; i++)
+    {
+    	for(j=0; j<9; j++)
+    		iPuzzle[i][j] = rand() % 9;
+    }
+    
+    // Print int array
+    for (i=0; i<9; i++)
+    {
+    	for(j=0; j<9; j++)
+    		printf("%d ", iPuzzle[i][j]);
+    	printf("\n");
+    }
+	printf("\n");
+	
+	//Commensing loop check
+	for(iRow = 0; iRow < 1; iRow++)
+	{
+		//rowCheck(iPuzzle, cRowCounter, iRow);
+		// Populate char array for row check 
+		for(j = 0; j < 9; j++)
+			cRowCounter[iPuzzle[iRow][j]]++;
+		
+		printf("Row Check: %d\n", iRow);
+		printArray(cRowCounter, 10);		//+ ColumnCheck + BoxCheck\n");
+		
+		for(iColumn = 0; iColumn < 1; iColumn++)
+		{
+			//columnCheck(iPuzzle, cColumnCounter, iColumn);
+			// Populate char array for column check
+			for(i = 0; i < 9; i++)
+				cColumnCounter[iPuzzle[i][iColumn]]++;
+			
+			printf("Column Check: %d\n", iColumn);
+			printArray(cColumnCounter, 10);
+			switch(iRow)
+			{
+				case 0: case 3: case 6:
+					switch(iColumn)
+					{
+						case 0: case 3: case 6:
+						ResetCounter(cBoxCounter, 10);
+						printf("Commence BoxCheck @ i,j = %d, %d\n", iRow, iColumn);
+						// Populate char array for 3X3 box check
+						for(i = iRow; i < 3; i++)
+					    {
+					    	for(j = iColumn; j < 3; j++)
+					      		cBoxCounter[iPuzzle[i][j]]++;
+					    }
+						break;
+					}
+					printf("Box Check: %d\n", iColumn);
+					printArray(cBoxCounter, 10);
+				break;
+			}
+			compareCounters(cRowCounter, cColumnCounter, cBoxCounter);
+			
+			ResetCounter(cColumnCounter, 10);
+		}
+		ResetCounter(cRowCounter, 10);
+	}
+	
+	return 0;
+}
+
+void printArray(char *cCounter, int iLength) // Print char array
+{
+	int i;
+	for(i = 0; i < iLength; i++)
+		printf("%d ", cCounter[i]);
+	printf(" = IndecesCounted\n");
+	
+	// Print index reference
+	for(i = 0; i < iLength; i++)
+		printf("%d ", i);
+	printf(" = Indeces\n");
+}
+
+void ResetCounter(char *cCounter, int iLength) // Set counter array = 0
+{
+	int i;
+	for(i = 0; i < iLength; i++)
+		cCounter[i] = 0;
+}
+
+void compareCounters(char *cRowCounter, char *cColumnCounter, char *cBoxCounter)
+{
+	int index;
+	char cPossibleValue;
+	cPossibleValue = 1;
+	for(index = 1; index < 10; index++)
+	{
+		cPossibleValue = cRowCounter[index] || cColumnCounter[index] || cBoxCounter[index];
+		if(cPossibleValue == 0)
+			printf("%d ", index);
+	}
+	printf(" = Possible Values");
+	printf("\n");
+}

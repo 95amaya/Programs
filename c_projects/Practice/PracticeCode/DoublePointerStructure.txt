@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+	int x;
+	int y;
+} myDataT;
+
+int main(void) {
+	int N, i, j;
+	myDataT **a;
+	
+	printf("Enter Number of Rows: ");
+	scanf("%d", &N);
+	
+	a = (myDataT **)malloc(N * sizeof(myDataT *));
+	
+	for(i = 0; i<N; i++)
+	{
+		a[i] = (myDataT *)malloc((i+1) * sizeof(myDataT));
+		printf("Row %i: ", i);
+		
+		for(j = 0; j< i+1; j++)
+		{
+			a[i][j].x = i;
+			a[i][j].y = j;
+			printf("x = %i, y = %i| ", a[i][j].x, a[i][j].y);
+		}
+		printf("\n");
+	}
+	
+        for(i = 0; i < N; i++)
+            free(a[i]);
+        free(a);
+	return 0;
+}

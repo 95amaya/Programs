@@ -1,0 +1,185 @@
+Script started on Fri 02 Dec 2016 11:48:11 PM CST
+[4mfox04[24m:[1m~/Desktop/Graph[0m> ./graph.[K directedgraph1.txt [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kundirectedgraph1.txt 
+Graph Name: myg1
+Node 1:  2(w=3), 3(w=6),
+Node 2:  1(w=3), 3(w=1), 4(w=5),
+Node 3:  1(w=6), 2(w=1), 5(w=2),
+Node 4:  2(w=5), 5(w=3), 6(w=6),
+Node 5:  3(w=2), 4(w=3), 6(w=1),
+Node 6:  4(w=6), 5(w=1),
+Graph Name: myg2
+Node 1:  2(w=3), 3(w=6),
+Node 2:  1(w=3), 3(w=1), 4(w=5),
+Node 3:  1(w=6), 2(w=1), 5(w=2),
+Node 4:  2(w=5), 5(w=3), 6(w=6),
+Node 5:  3(w=2), 4(w=3), 6(w=1),
+Node 6:  4(w=6), 5(w=1),
+Enter a Graph command (type H for help)
+> insert myg2 1 3 6   6 3
+Enter a Graph command (type H for help)
+> inser     printgraph myg2
+Graph Name: myg2
+Node 1:  2(w=3), 3(w=6), 6(w=3),
+Node 2:  1(w=3), 3(w=1), 4(w=5),
+Node 3:  1(w=6), 2(w=1), 5(w=2),
+Node 4:  2(w=5), 5(w=3), 6(w=6),
+Node 5:  3(w=2), 4(w=3), 6(w=1),
+Node 6:  1(w=3), 4(w=6), 5(w=1),
+Enter a Graph command (type H for help)
+> deletee    myg2 1 3
+Enter a Graph command (type H for help)
+> printgraph myg2
+Graph Name: myg2
+Node 1:  2(w=3), 6(w=3),
+Node 2:  1(w=3), 3(w=1), 4(w=5),
+Node 3:  2(w=1), 5(w=2),
+Node 4:  2(w=5), 5(w=3), 6(w=6),
+Node 5:  3(w=2), 4(w=3), 6(w=1),
+Node 6:  1(w=3), 4(w=6), 5(w=1),
+Enter a Graph command (type H for help)
+> differentlinks myg1 my    2 myg1
+Node 1:  6(w=3),
+Node 2: 
+Node 3: 
+Node 4: 
+Node 5: 
+Node 6:  1(w=3),
+Enter a Graph command (type H for help)
+> common links myg1             n   links myg1 myg1 2
+Node 1:  2(w=3),
+Node 2:  1(w=3), 3(w=1), 4(w=5),
+Node 3:  2(w=1), 5(w=2),
+Node 4:  2(w=5), 5(w=3), 6(w=6),
+Node 5:  3(w=2), 4(w=3), 6(w=1),
+Node 6:  4(w=6), 5(w=1),
+Enter a Graph command (type H for help)
+> dfs_print myg2
+1 is visisted
+2 is visisted
+3 is visisted
+5 is visisted
+4 is visisted
+6 is visisted
+Enter a Graph command (type H for help)
+> myg2    isconnected myg2
+1 is visisted
+2 is visisted
+3 is visisted
+5 is visisted
+4 is visisted
+6 is visisted
+myg2 is connnected
+Enter a Graph command (type H for help)
+> myg   is  delte     printgraph          eliminate  links 2   myg2 2 5
+Enter a Graph command (type H for help)
+> printgraph myg2
+Graph Name: myg2
+Node 1:  2(w=3), 6(w=3),
+Node 2:  1(w=3), 4(w=5),
+Node 3:  5(w=2),
+Node 4:  2(w=5), 5(w=3),
+Node 5:  3(w=2), 4(w=3),
+Node 6:  1(w=3),
+Enter a Graph command (type H for help)
+> num of   ofconncomp myg2
+Component 1
+1 is visisted
+2 is visisted
+4 is visisted
+5 is visisted
+3 is visisted
+6 is visisted
+myg2 connnected components: 1
+Enter a Graph command (type H for help)
+> help
+  Quit -- Quit the program
+  Help -- Display this help message
+  Insert          [myg1 | myg2] x y w
+  Delete          [myg1 | myg2] x y
+  Printgraph      [myg1 | myg2]
+  Printdegree     [myg1 | myg2]
+  Printcomplement [myg1 | myg2]
+  Eliminatelinks  [myg1 | myg2] minW maxW
+  Differentlinks  [myg1 | myg2] [myg1 | myg2]
+  Commonlinks     [myg1 | myg2] [myg1 | myg2]
+  Dfs_print 	  [myg1 | myg2] x
+  Isconnected     [myg1 | myg2]
+  Numofconncomp   [myg1 | myg2]
+Enter a Graph command (type H for help)
+> printdegree myg2
+Node 1, Degree: 2
+Node 2, Degree: 2
+Node 3, Degree: 1
+Node 4, Degree: 2
+Node 5, Degree: 2
+Node 6, Degree: 1
+Enter a Graph command (type H for help)
+> printgraph myg2
+Graph Name: myg2
+Node 1:  2(w=3), 6(w=3),
+Node 2:  1(w=3), 4(w=5),
+Node 3:  5(w=2),
+Node 4:  2(w=5), 5(w=3),
+Node 5:  3(w=2), 4(w=3),
+Node 6:  1(w=3),
+Enter a Graph command (type H for help)
+> quit
+Exiting Program
+[4mfox04[24m:[1m~/Desktop/Graph[0m> di[K[Kdi
+dialog      diff3       diffstat    dijkstra    dircolors   dirs        disdvi      display.im6 
+diff        diffimg     dig         dir         dirname     dirsplit    display     
+[4mfox04[24m:[1m~/Desktop/Graph[0m> di[K[K./graph directedgraph1.txt 
+Graph Name: myg1
+Node 1:  2(w=3),
+Node 2:  3(w=1),
+Node 3:  1(w=6), 5(w=2),
+Node 4:  2(w=5), 5(w=3), 6(w=6),
+Node 5:  6(w=1),
+Node 6: 
+Graph Name: myg2
+Node 1:  2(w=3),
+Node 2:  3(w=1),
+Node 3:  1(w=6), 5(w=2),
+Node 4:  2(w=5), 5(w=3), 6(w=6),
+Node 5:  6(w=1),
+Node 6: 
+Enter a Graph command (type H for help)
+> insert 1 3 4      m  myg2 1 3 4
+Enter a Graph command (type H for help)
+> printgrapn   h myg2
+Graph Name: myg2
+Node 1:  2(w=3), 3(w=4),
+Node 2:  3(w=1),
+Node 3:  1(w=6), 5(w=2),
+Node 4:  2(w=5), 5(w=3), 6(w=6),
+Node 5:  6(w=1),
+Node 6: 
+Enter a Graph command (type H for help)
+> isconen  nected           printdegree myg2
+Node 1, Out-Degree: 2 In-Degree: 1
+Node 2, Out-Degree: 1 In-Degree: 2
+Node 3, Out-Degree: 2 In-Degree: 2
+Node 4, Out-Degree: 3 In-Degree: 0
+Node 5, Out-Degree: 1 In-Degree: 2
+Node 6, Out-Degree: 0 In-Degree: 2
+Enter a Graph command (type H for help)
+> exit
+  Quit -- Quit the program
+  Help -- Display this help message
+  Insert          [myg1 | myg2] x y w
+  Delete          [myg1 | myg2] x y
+  Printgraph      [myg1 | myg2]
+  Printdegree     [myg1 | myg2]
+  Printcomplement [myg1 | myg2]
+  Eliminatelinks  [myg1 | myg2] minW maxW
+  Differentlinks  [myg1 | myg2] [myg1 | myg2]
+  Commonlinks     [myg1 | myg2] [myg1 | myg2]
+  Dfs_print 	  [myg1 | myg2] x
+  Isconnected     [myg1 | myg2]
+  Numofconncomp   [myg1 | myg2]
+Enter a Graph command (type H for help)
+> quit
+Exiting Program
+[4mfox04[24m:[1m~/Desktop/Graph[0m> ^Dexit
+
+Script done on Fri 02 Dec 2016 11:53:07 PM CST
