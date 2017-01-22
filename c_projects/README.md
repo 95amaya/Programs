@@ -14,7 +14,6 @@ gcc -g <c filename>.c -o <output filename>.o
 ```bash
 gcc -c <file1>.c <file2>.h
 ```
-
 2.) Link object files to executables
 ```bash
 gcc -o <output> <file1>.o <file2>.o ... 
