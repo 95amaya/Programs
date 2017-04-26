@@ -1,0 +1,49 @@
+#What I know
+	.text
+main:	la $a0,banner
+	li $v0,4
+	syscall
+	
+	la $a0,NL
+	li $v0,4
+	syscall
+	
+	la $a0,masking
+	li $v0,4
+	syscall
+	
+	lw $t0,mask
+	li $s0,0	#counter
+
+loop:	beq $s0,4,change
+	beq $s0,9,done
+	la $a0,tab
+	li $v0,4
+	syscall
+	rol $t0,$t0,8
+	and $a0,$t0,0xff
+	li $v0,11
+	syscall
+	
+	add $s0,$s0,1
+	j loop
+
+change:	lw $t0,mask1
+	add $s0,$s0,1
+	j loop
+
+done:
+
+	
+	li $v0,10
+	syscall
+
+
+	.data
+banner:	.asciiz "What I know.. "
+masking:.asciiz "Masking: "
+mask:	.word 0x6d61736b
+mask1:	.word 0x696e670a
+
+tab:	.asciiz "\t"
+NL:	.asciiz "\n"

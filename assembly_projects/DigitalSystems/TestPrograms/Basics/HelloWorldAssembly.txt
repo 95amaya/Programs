@@ -1,0 +1,31 @@
+.data
+NL:	.asciiz "\n"
+array:	.space 100 # relocatable 100 bytes
+
+banner:	.asciiz "Hello World!"
+
+.text
+
+buffer: .space 100 #  A place for 98 characters
+
+main:
+li $v0,8
+la $a0,buffer
+li $a1,20	# read 18 characters + "\n" + NULL terminator
+syscall
+
+li $v0,1	# 1 = print_int
+li $a0,1234
+syscall
+li $a0,0x1234
+syscall
+
+li $v0,4	# 4 = print_string
+la $a0,NL	# NL = pointer -> "\n"
+syscall
+
+li $v0,4
+la $a0,banner
+syscall
+li $v0,10
+syscall

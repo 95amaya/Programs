@@ -1,0 +1,59 @@
+Type: P 
+Title: Michelson-Morely experiment(optional) 
+1) How is the Michelson-Morely experiment related to Albert Einstein's theory of relativity?
+ a) In 1887, Albert Michelson and Edward Morely carried out experiments to detect the change in speed of light due to ether wind when the Earth moved around the sun. The result was negative. They found the speed of light is always the same regardless of Earth's motion around the sun. Scientists were puzzled with this negative result, and they didn't know how to explain it. Albert Einstein came up with the answer in his famous second postulate in theory of relativity: that the speed of light (in vacuum) is always constant and absolute, regardless of its source's motion and observer's movement.
+
+Type: MR
+2) Which of the following individuals are credited with determining the exact speed of light?
+ a. Albert Einstein 
+*b. Albert Michelson 
+c. Thomas Edison
+ *d. Edward Williams Morley 
+
+Type: S
+ Title: Who invented television? 
+3. Who is known as the "father of television"?
+ a. Zworykin
+b. Vladimir Zworykin
+c. Vladimir Kosma Zworykin
+
+Type: MC
+4) Which is a valid keyword in java?
+ *a. interface 
+b. string
+ c. Float
+ d. unsigned
+
+ Type: MC
+5. Who is known as the "father of television"? 
+*a. Zworykin
+b. Vladimir Zworykin
+c. Vladimir Kosma Zworykin
+d. Guglielmo Marconi
+ 
+Type: TF
+6) Albert Michelson determined the exact speed of light? 
+*a) True
+ b) False
+
+ Type: MT
+ Title: Scientific discoveries
+ 7) Match the correct name to the discovery or theory. 
+a. Michelson-Morely = Speed of light 
+b. Einstein = Theory of Relativity
+ c. Marconi = radio waves
+
+ Type: TF
+8) Albert Michelson determined the exact speed of light?
+ *a. T
+ b. F 
+ 
+Type: TF
+9) Albert Michelson determined the exact speed of light?
+ *a) True 
+b) False
+
+ Type: TF
+10) King Tut was one of the longest-reigning kings of ancient Egypt?
+ a) True 
+*b) False

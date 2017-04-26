@@ -1,0 +1,250 @@
+#insertion letter program
+#With Recursion
+
+.text
+main:	
+	la $a0,ask	#Prompt user to type in a-z
+	li $v0,4
+	syscall
+
+	li $v0,12	#Read char (stores in $v0)
+	syscall
+
+	beq $v0,48,endpr	#if "0" end program (48 dec)
+	beq $v0,80,anss		#if "P" print string (80 dec)
+	blt $v0,97,error01	#Check if it is between a-z
+	bgt $v0,122,error01
+	
+	move $t4,$v0
+	la $t0,str
+	la $t2,new
+	li $s2,0		#Counter when to know to end the program
+
+loop:	lb $s1,0($t0)		#Loading str byte
+########################################################3	
+	la $a0,wow
+	li $v0,4
+	syscall
+	move $a0,$s1
+	li $v0,11		#Print Chars (bottom 4 bits of $a0)
+	syscall
+###########################################################
+	lb $s3,0($t2)		#Loading new byte
+########################################################	
+	la $a0,how
+	li $v0,4
+	syscall
+	move $a0,$s3
+	li $v0,11		#Print Chars (bottom 4 bits of $a0)
+	syscall
+###########################################################3
+	beq $s1,$t4,begin	#Comparing letter to str
+#	blt $s1,$s3,begin
+#	beqz $s1,begin
+	beqz $s3,store		#Only on first time through
+	bne $s1,$s3,inc
+	
+store:	sb $s1,0($t2)		#Overwrite memory if str = new or new = 0 (empty)
+	lb $s3,1($t2)
+	beq $s1,$s3,inc		#Can't have str byt > new byte
+########################################################3	
+	la $a0,sor
+	li $v0,4
+	syscall
+	move $a0,$s1
+	li $v0,11		#Print Chars (bottom 4 bits of $a0)
+	syscall
+###########################################################3
+	add $t0,$t0,1		#Incrementing str
+########################################################3	
+	la $a0,spl
+	li $v0,4
+	syscall
+	la $a0,str
+	sub $a0,$a0,$t0
+	li $v0,1		#Print num (bottom 4 bits of $a0)
+	syscall
+###########################################################3
+inc:	add $t2,$t2,1		#Incrementing space
+########################################################3	
+	la $a0,do
+	li $v0,4
+	syscall
+
+	la $a0,new
+	sub $a0,$a0,$t2
+	li $v0,1		#Print num (bottom 4 bits of $a0)
+	syscall
+###########################################################3
+	add $s2,$s2,1		#Counter to where letter should be inserted
+	beq $s2,31,error02	#Branches when there's no space left
+	j loop
+##################### RECURSION ##############################################################
+
+begin:	#bneqz $s3,begin2
+	add $s2,$s2,1		#Counter to where letter should be inserted
+	beq $s2,32,error02	#Branches when there's no space left
+
+	lb $s3,0($t2)
+	lb $s1,0($t0)	#Using str
+######################################################################
+	la $a0,sor3
+	li $v0,4
+	syscall
+	move $a0,$s1
+	li $v0,11		#Print Chars (bottom 4 bits of $a0)
+	syscall
+#########################################################################
+	beqz $s1,base		#when recursion is finished
+kid:	sub $sp,$sp,8
+	sw $ra,0($sp)		#storing address to begin
+	beq $s1,$t4,first	#Store same letter twice
+	beqz $s3,skip
+	bne $s1,$s3,second
+skip:	sb $s1,4($sp)		#storing letters a-z onto stack
+	
+######################################################################
+	la $a0,sor1
+	li $v0,4
+	syscall
+	move $a0,$s1
+	li $v0,11		#Print Chars (bottom 4 bits of $a0)
+	syscall
+#########################################################################		
+	add $t0,$t0,1		#Traverse byte	
+	add $t2,$t2,1
+
+start:	jal begin
+com:	sb $s1,0($t2)	#storing to new
+######################################################################
+	la $a0,sor2
+	li $v0,4
+	syscall
+	move $a0,$s1
+	li $v0,11		#Print Chars (bottom 4 bits of $a0)
+	syscall
+
+	la $a0,cant
+	li $v0,4
+	syscall
+	#la $a0,new
+	#sub $a0,$a0,$t2
+	move $a0,$t2
+	add $a0,$a0,1
+	li $v0,1		#Print num (bottom 4 bits of $a0)
+	syscall
+#########################################################################	
+	sub $t2,$t2,1
+#	beq $s1,$t4,YES
+	j return
+
+first: 	sb $t4,4($sp)		#storing letters a-z
+	li $t4,1
+	j start
+second: sb $s3,4($sp)		#storing letters a-z
+	add $t2,$t2,1
+	j start
+#YES:	jr $ra
+
+###################################################################
+	la $a0,sor1
+	li $v0,4
+	syscall
+	move $a0,$s1
+	li $v0,11		#Print Chars (bottom 4 bits of $a0)
+	syscall
+########################################################################
+
+base:	la $a0,bar
+	li $v0,4
+	syscall
+	bnez $s3,kid
+	
+return:	lb $s1,4($sp)
+	blt $s1,97,contin
+	bgt $s1,122,contin
+	lw $ra,0($sp)
+	add $sp,$sp,8
+	beq $ra,0x400018,com#contin
+	jr $ra
+	
+error01:la $a0,error1		#didn't enter proper letter
+	li $v0,4
+	syscall
+	j main
+
+error02:la $a0,error2		#string is filled
+	li $v0,4
+	syscall
+	j endpr
+
+anss:	la $a0,curr		#prints ans prompt
+	li $v0,4
+	syscall
+	lb $s1,new
+	#la $a0,new
+	#li $v0,1		#Print num (bottom 4 bits of $a0)
+	#syscall
+	beqz $s1,string
+	la $t1,new
+
+print:	lb $s1,0($t1)		#Have to do a loop because you can't get to the memory directly
+	beqz $s1,contin
+	#beq $s1,122,contin
+	#move $a0,$t1
+	#li $v0,1		#Print num (bottom 4 bits of $a0)
+	#syscall
+	move $a0,$s1
+	li $v0,11		#Print Chars (bottom 4 bits of $a0)
+	syscall
+	add $t1,$t1,1
+	j print
+
+string:	la $a0,str		#prints alphabatized string
+	li $v0,4
+	syscall
+
+contin:	#sub $t2,$t2,1
+	#sb $t4,0($t2)
+######################################################################
+	la $a0,top
+	li $v0,4
+	syscall
+	move $a0,$s1
+	li $v0,11		#Print Chars (bottom 4 bits of $a0)
+	syscall
+#########################################################################
+	la $a0,cont		#asks to continue
+	li $v0,4
+	syscall
+
+	li $v0,12		#Read char (stores in $v0)
+	syscall
+	beq $v0,121,main	#only branch if it equals "y" otherwise end program
+
+endpr:	la $a0,end		#ends program
+	li $v0,4
+	syscall
+	li $v0,10
+	syscall
+
+	.data
+ask:	.asciiz "Enter a letter a-z (press enter after): "
+curr:	.asciiz "\nHere's the current string: "
+error1:	.asciiz "\nNot a lower case letter between a-z\n"
+error2:	.asciiz "\nSorry, can't fit anymore letters\n"
+cont:	.asciiz "\nWould you like to continue?(y/n) "
+end:	.asciiz "END PROGRAM\n"
+new:	.space 32
+str:	.asciiz "abcdefghijklmnopqrstuvwxyz"
+sor:	.asciiz "\nStoring from str: "
+sor1:	.asciiz "\nStoring to stack: "
+sor2:	.asciiz "\nStoring to new: "
+cant:	.asciiz "\nNew Count: "
+wow:	.asciiz "\nStr byte:(Should be the same) "
+how:	.asciiz "\nNew byte: "
+do:	.asciiz "\nNew Counter:(Should be one more than $t3) "
+top:	.asciiz "\non top of stack: "
+spl:	.asciiz "\nstr Counter: "
+sor3:	.asciiz "\nShould be letter: "
+bar:	.asciiz "\nHIT THE BASE!!!!!!!!!!"	

@@ -1,0 +1,31 @@
+#STACK pointer loops
+	.text
+main:
+	la $t1,w		#first address
+	li $t0,0		#counter 
+
+	Letters: lb $a0,($t1)	#Get Letter 
+		 beqz $a0,done
+		 beq $a0,0x0a,print
+		 beq $a0,0x20,print
+		 beq $a0,0x21,print
+		 bgt $a0,0x40,check	
+		 add $t1,$t1,1	#Increment Letter
+	j Letters
+
+check:	blt $a0,0x5b,print
+	add $t1,$t1,1	#Increment Letter
+	j Letters
+
+print:	li $v0,11		#Print ASCII
+	syscall
+	add $t1,$t1,1	#Increment Letter
+	j Letters
+
+done:	li $v0,10
+	syscall
+
+	.data
+w:	.word 0x44305455
+x:	.word 0x43314520
+y:	.word 0x0a213753

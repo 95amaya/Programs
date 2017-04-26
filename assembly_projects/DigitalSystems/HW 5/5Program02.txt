@@ -1,0 +1,28 @@
+.text
+main:
+lw $t3,t
+lw $t4,u
+lw $t5,x
+lw $t6,v
+lw $t7,w
+lw $t8,y
+lw $t9,z
+
+sub $t5,$t3,$t4
+sub $t8,$t6,$t7
+mul $t9,$t5,$t8
+move $a0,$t9
+
+li $v0,1
+syscall
+li $v0,10
+syscall
+
+	.data
+t:	.word 100
+u:	.word 54
+v:	.word 37
+w:	.word 23
+x:	.word 0
+y:	.word 0
+z:	.word 0

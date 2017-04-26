@@ -1,0 +1,33 @@
+#Rev 3 - Program 2
+#x^y recursively
+	.text
+main:
+	lw $t0,x
+	lw $t1,y
+	mul $t2,$t0,$t0
+	sub $t1,$t1,2
+
+loop:	beqz $t1,done		#finish when y = 0
+	mul $t2,$t2,$t0
+	sub $t1,$t1,1
+	j loop
+
+done:	la $t3,z
+	sw $t2,0($t3)
+	
+	la $a0,out
+	li $v0,4
+	syscall
+
+	move $a0,$t2
+	li $v0,1
+	syscall
+
+	li $v0,10
+	syscall
+	
+	.data
+out:	.asciiz "x^y = "
+x:	.word 100
+y:	.word 4
+z:	.space 4

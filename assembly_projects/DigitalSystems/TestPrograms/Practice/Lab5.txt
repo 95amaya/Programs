@@ -1,0 +1,85 @@
+#Bubble sort method to alphabatize word
+#CHECK and fix switch method
+
+.text
+main:
+la $a0,ask	#Prompt user to type a string
+li $v0,4
+syscall
+
+la $a0,input	#Where you're storing the input
+li $a1,30	#28 characters, NL, and Null pointer
+li $v0,8
+syscall
+
+la $s2,input
+length:	lb $t0,0($s2)
+	beq $t0,10,continue
+	beq $t0,0,continue
+	add $s3,$s3,1
+	add $s2,$s2,1
+	j length
+
+continue:	sub $s3,$s3,1	#Getting length - 1 for efficient loop
+		li $s0,0	#Outside counter
+		li $s2,0	#under counter
+		li $t3,0	#over counter
+		la $t0,input	#address to keep count from
+		la $s1,input	#initialize first address to count from
+
+loop:		beq $s0,$s3,print #Test counter (string.length()-1)
+	
+	loop2:	lb $t1,0($s1) 	#load the first byte -> t1 (offset method)
+		lb $t2,1($s1)	#load next byte -> t2 (offset method)	
+		beq $t2,10,loopCont	#once it equal "newline" branch out of inner loop
+		beqz $t2,loopCont	#also branch if it reaches NULL without "newline" character
+		bgt $t1,$t2,sort#check if first char > 2nd
+		add $s1,$s1,1	#Go to next byte (only increment by one)
+		j loop2
+
+loopCont:	add $s0,$s0,1	#incrementing counter
+		move $s1,$t0	#set $t0 back to orginal address
+		j loop
+
+sort:		sb $t1,1($s1)	#t1 -> t2 address		****Switching Chars
+		sb $t2,($s1)	#t2 -> t1 address
+		li $v0,4
+		syscall
+		add $s1,$s1,1
+		j loop2;
+####################################		
+#check:		lb $s0,0($s1)
+#		addi $s1,$s1,1
+#		beqz $s0,print
+#		beq $s0,10,print
+#		bgt $s0,122,right
+#		bgt $s0,96,check
+#		addi $s2,$s2,1	
+#		j check
+
+#right:		addi $t3,$t3,1
+#		j check
+####################################
+
+print:
+#sll $a0,$a0,$s2
+li $v0,4
+syscall
+
+#srl $a0,$a0,$t3
+la $a0,out		
+li $v0,4
+syscall
+
+la $a0,input
+li $v0,4
+syscall
+
+li $v0,10
+syscall
+
+	.data
+ask:	.asciiz "Enter a word: "
+input:	.space 50
+out:	.asciiz "This is it alphabatized: "
+new:	.word 0

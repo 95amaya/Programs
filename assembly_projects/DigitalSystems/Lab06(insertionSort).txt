@@ -1,0 +1,134 @@
+#insertion letter program
+#With Recursion
+
+.text
+main:	la $a0,ask	#Prompt user to type in a-z
+	li $v0,4
+	syscall
+
+	li $v0,12	#Read char (stores in $v0)
+	syscall
+
+	beq $v0,48,endpr	#if "0" end program (48 dec)
+	beq $v0,80,anss		#if "P" print string (80 dec)
+	blt $v0,97,error01	#Check if it is between a-z
+	bgt $v0,122,error01
+	
+	move $t4,$v0
+	la $t0,str
+	la $t2,new
+	li $s2,0		#Counter when to know to end the program
+
+loop:	lb $s1,0($t0)		#Loading str byte
+	lb $s3,0($t2)		#Loading new byte
+	beq $s1,$t4,begin	#Comparing letter to str
+	beqz $s3,store		#Only on first time through
+	bne $s1,$s3,inc
+	
+store:	sb $s1,0($t2)		#Overwrite memory if str = new or new = 0 (empty)
+	lb $s3,1($t2)
+	beq $s1,$s3,inc		#Can't have str byt > new byte
+	add $t0,$t0,1		#Incrementing str
+
+inc:	add $t2,$t2,1		#Incrementing space
+	add $s2,$s2,1		#Counter to where letter should be inserted
+	beq $s2,31,error02	#Branches when there's no space left
+	j loop
+
+##################### RECURSION ##############################################################
+
+begin:	add $s2,$s2,1		#Counter to where letter should be inserted
+	beq $s2,32,error02	#Branches when there's no space left
+
+	lb $s3,0($t2)		#Using new
+	lb $s1,0($t0)		#Using str
+
+	beqz $s1,base		#when recursion is finished
+kid:	sub $sp,$sp,8
+	sw $ra,0($sp)		#storing address to begin
+	beq $s1,$t4,first	#Store same letter twice
+	beqz $s3,skip
+	bne $s1,$s3,second
+skip:	sb $s1,4($sp)		#storing letters a-z onto stack
+			
+	add $t0,$t0,1		#Traverse byte	
+	add $t2,$t2,1
+
+start:	jal begin
+com:	sb $s1,0($t2)		#storing to new
+	sub $t2,$t2,1
+	j return
+
+first: 	sb $t4,4($sp)		#storing same letter
+	li $t4,1
+	j start
+second: sb $s3,4($sp)		#storing new bytes
+	add $t2,$t2,1
+	j start
+
+base:	bnez $s3,kid
+return:	lb $s1,4($sp)
+	blt $s1,97,contin
+	bgt $s1,122,contin
+	lw $ra,0($sp)
+	add $sp,$sp,8
+	beq $ra,0x400018,com	#Couldn't jal first $ra
+	jr $ra
+	
+error01:la $a0,error1		#didn't enter proper letter
+	li $v0,4
+	syscall
+	j main
+
+error02:la $a0,error2		#string is filled
+	li $v0,4
+	syscall
+	j endpr
+
+anss:	la $a0,curr		#prints ans prompt
+	li $v0,4
+	syscall
+	lb $s1,new
+	beqz $s1,string
+	la $t1,new
+
+print:	lb $s1,0($t1)		#Have to do a loop because you can't get to the memory directly
+	beqz $s1,contin
+	move $a0,$s1
+	li $v0,11		#Print Chars (bottom 4 bits of $a0)
+	syscall
+	add $t1,$t1,1
+	j print
+
+string:	la $a0,str		#prints alphabatized string
+	li $v0,4
+	syscall
+
+contin:	la $a0,cont		#asks to continue
+	li $v0,4
+	syscall
+
+	li $v0,12		#Read char (stores in $v0)
+	syscall
+	
+	move $t4,$v0
+	li $a0,10
+	li $v0,11
+	syscall
+	beq $t4,121,main	#only branch if it equals "y" otherwise end program
+
+endpr:	la $a0,end		#ends program
+	li $v0,4
+	syscall
+	li $v0,10
+	syscall
+
+	.data
+ask:	.asciiz "Enter a letter a-z (press enter after): "
+curr:	.asciiz "\nHere's the current string: "
+error1:	.asciiz "\nNot a lower case letter between a-z\n"
+error2:	.asciiz "\nSorry, can't fit anymore letters\n"
+cont:	.asciiz "\nWould you like to continue?(y/n) "
+end:	.asciiz "\nEND PROGRAM\n"
+new:	.space 32
+str:	.asciiz "abcdefghijklmnopqrstuvwxyz"	

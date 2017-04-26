@@ -1,0 +1,23 @@
+#store word and offset method
+
+.text
+main:
+li $s1,4	#counter
+la $t0,w	#initialize first address to count from
+li $t8,0x89ab672f#number
+loop:	sw $t8,($t0) 	#storing [$t8] -> $t0(w's address)
+	beqz $s1,done	#check counter
+	sub $s1,$s1,1	#incrementing counter
+	add $t0,$t0,4	#Go to next available address 
+	j loop
+
+done:
+
+li $v0,10
+syscall
+
+	.data
+w:	.word 0
+x:	.word 0
+y:	.word 0
+z:	.word 0

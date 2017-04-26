@@ -1,0 +1,36 @@
+#Rev 3 - Program 4
+#30 sec timer
+	.text
+main:
+	la $a0,begin
+	li $v0,4
+	syscall
+
+	li $s0,0	#counter
+
+loop: 	beq $s0,31,done	#conditional Loop
+	move $a0,$s0	#print num
+	li $v0,1
+	syscall
+	li $a0,32	#print space
+	li $v0,11
+	syscall
+	li $t0,999999	#initialize pause timer
+
+pause:	bltz $t0,inc	
+	sub $t0,$t0,1
+	j pause
+
+inc:	add $s0,$s0,1		#increment by 1
+	j loop			#J Jumps and loops back through
+
+done:	la $a0,end
+	li $v0,4
+	syscall
+
+	li $v0,10
+	syscall
+
+	.data
+begin:	.asciiz	"Start: "
+end:	.asciiz	"Finish!"

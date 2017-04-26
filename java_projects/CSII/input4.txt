@@ -1,0 +1,60 @@
+Type: P
+Title: Science fiction(optional)
+1) What do you mean by Science fiction?
+a) Science fiction is a genre of fiction dealing with imaginative content such as futuristic settings, futuristic science and technology, space travel, time travel, faster than light travel, parallel universes and extraterrestrial life.
+
+Type: MC
+2. Who is known as the "father of television"?
+*a. Zworykin
+b. Vladimir Zworykin
+c. Vladimir Kosma Zworykin
+d. Guglielmo Marconi
+
+Type: MT
+Title: instrument name with its description
+3) Match the correct instrument name with its description.
+a. Feli = Goblet-shaped drum played by master drummer 
+b. Koning = Triangular frame-zither 
+c. Kora = Harp-lute found in West Africa
+
+Type: MC
+4. In which of these time periods was World War II fought?
+a. 1914-1917 
+b. 1929-1934
+*c. 1939-1945
+d. 1951-1955
+
+Type: TF
+5) Spiders belong to the "insect" class of animals?
+a) True
+*b) False
+
+Type: TF
+6) The tango originated in Argentina?
+*a. T
+b. F
+
+Type: S
+Title: Who invented television?
+7. Who is known as the "father of television"?
+a. Zworykin
+b. Vladimir Zworykin
+c. Vladimir Kosma Zworykin
+
+Type: TF
+8) Veins look blue because the oxygen-depleted blood in them is blue?
+a) True
+*b) False
+
+Type: MR
+9) Which of the following individuals are credited with determining the exact speed of light?
+a. Albert Einstein
+*b. Albert Michelson
+c. Thomas Edison
+*d. Edward Williams Morley
+
+Type: TF
+10) Death Valley is the lowest, hottest, and driest area of North America?
+*a) True
+b) False
+

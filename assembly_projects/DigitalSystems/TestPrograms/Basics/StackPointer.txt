@@ -1,0 +1,68 @@
+#lecture 14, program 2
+
+
+	.data
+num1:	.word 34527
+num2:	.word 98564
+num3:	.word 12953
+num4:	.word 68577
+
+	.text
+main:
+
+	lw $t0,num1
+	sub $sp,$sp,4
+	sw $t0,($sp)		
+
+	lw $t0,num2
+	sub $sp,$sp,4
+	sw $t0,($sp)	
+
+	lw $t0,num3
+	sub $sp,$sp,4
+	sw $t0,($sp)
+
+	lw $t0,num4
+	sub $sp,$sp,4
+	sw $t0,($sp)
+
+	lw $a0,($sp)
+	addi $sp,$sp,4
+	li $v0,1
+	syscall			#first 
+
+	li $v0,11
+	la $a0 0x0a
+	syscall
+
+	lw $a0,($sp)
+	addi $sp,$sp,4
+	li $v0,1
+	syscall			#second
+
+	li $v0,11
+	la $a0 0x0a
+	syscall
+
+	lw $a0,($sp)
+	addi $sp,$sp,4
+	li $v0,1
+	syscall			#third
+
+	li $v0,11
+	la $a0 0x0a
+	syscall
+
+	lw $a0,($sp)
+	addi $sp,$sp,4
+	li $v0,1
+	syscall			#fourth
+
+	li $v0,11
+	la $a0 0x0a
+	syscall
+
+
+
+	li $v0,10
+	syscall

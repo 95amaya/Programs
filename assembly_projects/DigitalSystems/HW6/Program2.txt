@@ -1,0 +1,26 @@
+#counting hello world
+	.text
+main:
+	la $t0,str
+	li $t1,0
+	li $t2,100 
+
+loop:	lb $s0,($t0)		#getting each letter
+	beq $s0,$t2,done	#ends when letter = w
+	addi $t1,$t1,1
+	addi $t0,$t0,1
+	j loop
+
+done:	la $a0,rept
+	li $v0,4
+	syscall
+
+	move $a0,$t1
+	li $v0,1
+	syscall
+
+li $v0,10
+syscall
+	.data
+str:	.asciiz "Hello, world\n"
+rept:	.asciiz "The number of letters before w is: "

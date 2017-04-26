@@ -1,0 +1,31 @@
+#What I know
+	.text
+main:	la $a0,banner
+	li $v0,4
+	syscall
+	
+	la $a0,NL
+	li $v0,4
+	syscall
+
+	lw $t0,masking
+	li $s0,1	#counter
+
+loop:	beq $s0,7,print
+	rol $t0,$t0
+	and $a0,$t0,0xf
+	li $v0,11
+	syscall
+	la $a0,NL
+	li $v0,4
+	syscall
+	
+	add $s1,$s1
+	j loop
+	
+
+
+	.data
+banner:	.word "What I know.. "
+masking:.word "Masking"
+NL:	.word "\n"

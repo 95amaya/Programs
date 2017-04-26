@@ -1,0 +1,41 @@
+
+	.data
+nums:	.word 5,3,8,9,2,4,1,7,6
+
+	.text
+main:	la $t0,nums	#Unsorted numbers
+	li $t1,9	#Counter of numbers to print
+	li $s0,8	#Counter of comparisons
+
+num:	beqz $s0,restart
+	lw $t2,0($t0)
+	lw $t3,4($t0)
+	bgt $t2,$t3,switch
+
+inc:	sub $s0,$s0,1
+	add $t0,$t0,4
+	j num
+
+switch:	sw $t2,4($t0)
+	sw $t3,0($t0)
+	#lw $a0,nums
+	#li $v0,1
+	#syscall
+	j inc
+	
+restart:add $s1,$s1,1
+	la $t0,nums
+	beq $s1,8,done
+	li $s0,8
+	j num
+
+done:	beqz $t1,exit
+	lw $a0,0($t0)
+	li $v0,1
+	syscall
+	sub $t1,$t1,1
+	add $t0,$t0,4
+	j done
+	
+exit:	li $v0,10
+	syscall

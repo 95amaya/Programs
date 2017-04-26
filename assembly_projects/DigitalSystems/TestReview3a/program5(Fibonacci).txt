@@ -1,0 +1,69 @@
+#Rev 3 - Program 1
+#Fibonacci recursion
+
+	.text
+main:
+	la $a0,begin
+	li $v0,4
+	syscall
+	
+	li $v0,5
+	syscall
+	move $a0,$v0
+	move $t0,$v0	#preserve num
+
+Fib:	sub $sp,$sp,12
+	sw $a0,0($sp)
+	sw $s0,4($sp)	#Holding result
+	sw $ra,8($sp)
+
+	li $s0,1
+	ble $a0,$s0,base
+
+	sub $a0,$a0,1	#n-1 argument
+	jal Fib
+	move $s0,$v0
+	sub $a0,$a0,1
+	jal Fib
+	add $v0,$v0,$s0
+	j return
+
+base:	move $v0,$a0
+
+return:	lw $ra,8($sp)
+	lw $s0,4($sp)
+	lw $a0,0($sp)
+	add $sp,$sp,12
+	beq $ra,0x400018,done 
+	jr $ra
+
+done:	move $s0,$v0
+	la $a0,ans1
+	li $v0,4
+	syscall
+
+	move $a0,$t0	#starting num
+	li $v0,1
+	syscall
+
+	la $a0,ans2
+	li $v0,4
+	syscall	
+
+	move $a0,$s0	#anwer
+	li $v0,1
+	syscall
+
+	la $a0,endl
+	li $v0,4
+	syscall	
+	
+	li $v0,10
+	syscall
+
+	.data
+begin:	.asciiz	"Input 2-digit number, 40 or less, fro Fibinacci calculation: "
+ans1:	.asciiz	"F ("
+ans2: 	.asciiz ") is "
+endl:	.asciiz ".\n"
+n:	.word 0

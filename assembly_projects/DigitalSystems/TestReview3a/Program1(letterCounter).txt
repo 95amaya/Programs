@@ -1,0 +1,29 @@
+#Rev 3 - Program 1
+#counting hello world
+	.text
+main:
+	la $t0,str
+	li $t1,0
+
+loop:	lb $s0,($t0)		#getting each letter
+	beqz $s0,done		#ends when word finishes
+	blt $s0,97,inc		#Check if it is between a-z
+	bgt $s0,122,inc
+	addi $t1,$t1,1
+	
+inc:	addi $t0,$t0,1
+	j loop
+
+done:	la $a0,rept
+	li $v0,4
+	syscall
+
+	move $a0,$t1
+	li $v0,1
+	syscall
+
+	li $v0,10
+	syscall
+	.data
+str:	.asciiz "hello, world\n"
+rept:	.asciiz "The number of lowercase letters is: "

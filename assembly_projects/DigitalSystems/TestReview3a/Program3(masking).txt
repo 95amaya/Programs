@@ -1,0 +1,31 @@
+#Rev 3 - Program 3
+#masking
+	.text
+main:
+	lw $t0,data1
+	li $s0,0	#0 counter
+	li $s1,0	#loop counter
+
+loop:	rol $t0,$t0,4
+	and $t1,$t0,0xf
+	bnez $t1,inc		#increment when you find "0"
+	add $s0,$s0,1
+
+inc:	beq $s1,8,done		#finish when rotated around once
+	add $s1,$s1,1
+	j loop
+
+done:	la $a0,out
+	li $v0,4
+	syscall
+
+	move $a0,$s0
+	li $v0,1
+	syscall
+
+	li $v0,10
+	syscall
+	
+	.data
+out:	.asciiz "Number of 0's: "
+data1:	.word 0x9f07ec03

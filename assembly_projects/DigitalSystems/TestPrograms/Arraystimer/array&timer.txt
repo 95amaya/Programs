@@ -1,0 +1,41 @@
+	.data
+begin:	.asciiz	"Begin: "
+array:	.space	100
+end:	.asciiz	" end!"
+pause:	.word	0x2ffff	#Pause timer
+	.text
+main:
+li $s0,0	#counter
+li $t1,10	#ending
+la $t0,array	#load array address into register
+
+la $a0,begin
+li $v0,4
+syscall
+
+loop: 	beq $s0,$t1,done	#conditional Loop
+
+	sw $s0,0($t0)		#array[i] = i (contents = address)
+
+	move $a0,$s0
+	li $v0,1
+	syscall
+
+	lw $t2,pause
+	loop1:	bltz $t2,keepGoing
+		
+		sub $t2,$t2,1
+		j loop1
+keepGoing:
+	add $t0,$t0,4		#each int is 4 bytes
+	add $s0,$s0,1		#increment by 1
+	j loop			#J Jumps and loops back through
+
+loop2:
+done:	
+	la $a0,end
+	li $v0,4
+	syscall
+
+li $v0,10
+syscall

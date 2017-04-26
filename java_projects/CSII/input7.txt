@@ -1,0 +1,63 @@
+Type: MC
+1) Who determined the exact speed of light?
+ a. Albert Einstein
+ b. Albert Michelson 
+*c. Thomas Edison 
+d. Guglielmo Marconi
+
+ 
+Type: MC
+2. Who is known as the "father of television"?
+ *a. Zworykin
+ b. Vladimir Zworykin 
+c. Vladimir Kosma Zworykin 
+d. Guglielmo Marconi
+
+ 
+Type: TF
+3) Albert Michelson determined the exact speed of light? 
+*a) True 
+b) False
+Type: TF
+4) Albert Michelson determined the exact speed of light? 
+*a. T 
+b. F
+Type: TF
+5) Albert Michelson determined the exact speed of light?
+ *a) True 
+b) False 
+
+
+Type: TF
+6) King Tut was one of the longest-reigning kings of ancient Egypt?
+ a) True
+ *b) False
+
+ 
+Type: P
+ Title: Michelson-Morely experiment(optional) 
+7) How is the Michelson-Morely experiment related to Albert Einstein's theory of relativity? a) In 1887, Albert Michelson and Edward Morely carried out experiments to detect the change in speed of light due to ether wind when the Earth moved around the sun. The result was negative. They found the speed of light is always the same regardless of Earth's motion around the sun. Scientists were puzzled with this negative result, and they didn't know how to explain it. Albert Einstein came up with the answer in his famous second postulate in theory of relativity: that the speed of light (in vacuum) is always constant and absolute, regardless of its source's motion and observer's movement. 
+
+
+Type: S
+ Title: Who invented television? 
+8. Who is known as the "father of television"? 
+a. Zworykin
+b. Vladimir Zworykin
+c. Vladimir Kosma Zworykin
+
+ 
+Type: MT
+ Title: Scientific discoveries
+ 9) Match the correct name to the discovery or theory. 
+a. Michelson-Morely = Speed of light 
+b. Einstein = Theory of Relativity
+ c. Marconi = radio waves
+
+ 
+Type: MR
+10) Which of the following individuals are credited with determining the exact speed of light?
+ a. Albert Einstein
+ *b. Albert Michelson
+ c. Thomas Edison
+ *d. Edward Williams Morley

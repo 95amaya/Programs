@@ -1,0 +1,34 @@
+#STACK pointer loops
+	.text
+main:
+	la $t1,num1		#first address
+	li $t0,0		#counter 
+
+loop:	beq $t0,4,print
+	lw $t2,($t1)		#Get num address
+	sw $t2,($sp)		#Store [num address] -> [pointer address]
+	addi $t1,$t1,4		#Increment address
+	sub $sp,$sp,4		#Increment pointer
+	add $t0,$t0,1		#Increment counter
+	j loop
+
+print:	beqz $t0,done
+	addi $sp,$sp,4		#Increment pointer
+	lw $a0,($sp)		#Get [Pointer address] -> $a0	
+	sub $t0,$t0,1		#Increment counter
+	li $v0,1		#Print
+	syscall
+	la $a0,n		#Line carriage return feed
+	li $v0,4
+	syscall
+	j print
+
+done:	li $v0,10
+	syscall
+
+	.data
+num1:	.word 0x47
+num2:	.word 0xf8
+num3:	.word 0x3e
+num4:	.word 0xad
+n:	.asciiz "\n"

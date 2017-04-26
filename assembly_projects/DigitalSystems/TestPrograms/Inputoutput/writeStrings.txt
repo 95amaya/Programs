@@ -1,0 +1,48 @@
+.data
+Name:		.asciiz "\nPlease print your name: "
+Address:	.asciiz "\nType your address: "
+Telephone:	.asciiz "\nTelephone number: "
+
+banner:		.asciiz "ADDRESS BOOK"
+
+.text
+
+buffer:		.space 100 #100 bytes of free memory
+
+main:
+li $v0,4	# Create Banner ADDRESS BOOK
+la $a0,banner	# As Title
+syscall		
+
+li $v0,4	# User is asked to input name
+la $a0,Name
+syscall
+
+li $v0,8	# User inputs name
+la $a0,buffer
+li $a1,20	#read 18 characters
+syscall		# Stored in memory but NOT enough
+move $t0,$a1	# so need to figure out how to fix
+
+li $v0,4	# User is asked to input address
+la $a0,Address
+syscall
+
+li $v0,8	# User inputs Address
+la $a0,buffer
+li $a1,20
+syscall
+move $t1,$a1
+
+li $v0,4	# User is asked to input Telephone
+la $a0,Telephone
+syscall
+
+li $v0,8	# User inputs Telephone
+la $a0,buffer
+li $a1,20
+syscall
+move $t2,$a1
+
+li $v0,10
+syscall

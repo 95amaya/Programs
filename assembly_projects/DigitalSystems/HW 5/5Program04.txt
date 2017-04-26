@@ -1,0 +1,32 @@
+.text
+main:
+lw $t3,data1
+lw $t4,data2
+lw $t5,data3
+lw $t6,data4
+lw $t7,data5
+lw $t8,ans
+
+la $a0,str
+li $v0,4
+syscall
+
+sub $t8,$t3,$t4
+add $t8,$t8,$t5
+div $t8,$t8,$t6
+mul $t8,$t8,$t7
+move $a0,$t8
+
+li $v0,1
+syscall
+li $v0,10
+syscall
+
+	.data
+str:	.asciiz "Hello World!\n"
+data1:	.word 51
+data2:	.word 37
+data3:	.word 26
+data4:	.word 49
+data5:	.word 80
+ans:	.word 0

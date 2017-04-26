@@ -1,0 +1,55 @@
+#store word and offset method
+
+.text
+main:
+lw $t0,x
+sw $t0,x
+lw $t0,y
+sw $t0,y
+la $t1,z
+lw $t0,0($t1)	#off Set method not pseudo 
+sw $t0,4($t1)	# $t0 = [address] = [$t1](which should be an ADDRESS!!!) + 4(offset for next available address)
+
+lw $s0,w	# load w memory location in s0
+sw $t0,w	# [$t0] stores into w
+
+move $a0,$s0
+
+li $v0,1
+syscall
+
+##############################################
+#counting hello world
+
+la $t3,str
+
+loop:	lb $s0,0($t3)	#getting each letter
+	beqz $s0,done	#ends when hits null = 0
+	blt $s0,0x61,inc
+	bgt $s0,0x7a,inc
+	j cnt
+	
+inc:	addi $t3,$t3,1
+	j loop
+ 
+cnt:	addi $t4,$t4,1	#counter increases
+	j inc
+
+done:	la $a0,rept
+	li $v0,4
+	syscall
+	
+	move $a0,$t4
+	li $v0,1
+	syscall
+
+li $v0,10
+syscall
+
+	.data
+x:	.word 50
+y:	.word 100
+z:	.word 25
+w:	.word 0
+str:	.asciiz "Hello, world\n"
+rept:	.asciiz "The total number of lowercase letter is: "

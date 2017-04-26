@@ -1,0 +1,15 @@
+.text
+main:
+li $t0,0x123	#x
+li $t1,0x12b7	#y
+li $t2,0x34af7	#z
+
+mul $t0,$t0,$t0	#x*x
+mul $t0,$t0,4	#x^2*4
+mul $t1,$t1,8	#y*8
+
+add $t1,$t0,$t1	#x+y
+add $s0,$t1,$t2	#y+z
+
+li $v0,10
+syscall

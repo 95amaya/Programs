@@ -1,0 +1,28 @@
+#lecture 16 program 1
+#use rotate right instruction to output the four bytes of the word above as 
+#	four ascii characters
+
+	.data
+chars:	.word 0x21445455	
+
+	.text
+main:
+
+	lw $a0,chars	#$a0 gets 55 first
+	li $v0,11	#syscall 11 only prints bottom 8 bits!
+	syscall
+	
+	ror $a0,$a0,8
+	li $v0,11
+	syscall
+	
+	ror $a0,$a0,8
+	li $v0,11
+	syscall
+
+	ror $a0,$a0,8
+	li $v0,11
+	syscall
+
+	li $v0,10
+	syscall
