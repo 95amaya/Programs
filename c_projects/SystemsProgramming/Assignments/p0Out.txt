@@ -1,0 +1,4 @@
+My name is Michael Amaya
+I am running this script from /home/afn946/Desktop/Programs/c_projects/SystemsProgramming/Assignments
+My username is afn946
+I am logged in to gnu014
