@@ -23,7 +23,7 @@
 module Test(input [15:0] Input, input [3:0] sel, output Out);
 wire [1:0] mid;
 
-Eightto1Mux Mux2(Input[15:7], sel[2:0], mid[1]);
+Eightto1Mux Mux2(Input[15:8], sel[2:0], mid[1]);
 Eightto1Mux Mux1(Input[7:0] , sel[2:0], mid[0]);
 
 assign Out = sel[3]? mid[1] : mid[0];
