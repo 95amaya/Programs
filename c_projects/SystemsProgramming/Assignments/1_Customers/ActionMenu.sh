@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 # check for too few arguments, be careful of the spacing
 # if [ $# -lt 1 ]; then
 #     echo "usage: simpWhile number"
@@ -24,4 +24,11 @@ echo "P - accept a customer payment"
 echo "F - find customer by apartment number"
 
 read action
-echo "Action = $action"
+# echo "Action = $action"
+case "$action" in
+    [Cc]) ./CreateAction.sh;; # Run CreateAction.sh
+    [Pp]) ./PaymentAction.sh;; # Run PaymentAction.sh
+    [Ff]) ./FindAction.sh;; # Run FindAction.sh
+    *)   echo "Error: invalid action value"
+         exit 1;; # Failed execution
+esac
