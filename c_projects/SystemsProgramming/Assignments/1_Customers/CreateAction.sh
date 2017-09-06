@@ -6,18 +6,19 @@ read -p "Monthly Rent Amount: $" monthlyrent
 read -p "Next Due Date: " duedate
 balance=0
 
-# See if customer exists
-if [ $(find -name "$email" | wc -l) -eq 1 ]; then # gt 0 ? eq 1
-    echo "Error: customer already exists"
-    exit 1
+# See if customer exists, look in Data directory
+if [ $(find ./DummyData -name "$email" | wc -l) -eq 1 ]; then # gt 0 ? eq 1
+    echo -e "Error: customer already exists\n"
+    # Do nothing
+else
+    # Create Customer File
+    echo "Creating Customer File..."
+    echo "$email $firstname $lastname" > $email # Redirect to file
+    echo "APT-$apt $monthlyrent $balance $duedate" >> $email # Append to file
+
+    # echo completion
+    echo -e "\nCreated File $email with contents:"
+    echo "$email $firstname $lastname"
+    echo "APT-$apt $monthlyrent $balance $duedate"
+    echo -e "\n"
 fi
-
-# Create Customer File
-echo "Creating Customer File..."
-echo "$email $firstname $lastname" > $email # Redirect to file
-echo "APT-$apt $monthlyrent $balance $duedate" >> $email # Append to file
-
-# echo completion
-echo -e "\nCreated File $email with contents:"
-echo "$email $firstname $lastname"
-echo "APT-$apt $monthlyrent $balance $duedate"

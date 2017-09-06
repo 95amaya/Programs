@@ -2,8 +2,7 @@
 read -p "Email: " email
 read -p "Payment Amount: $" amount
 
-if [ $(find -name "$email" | wc -l) -eq 1 ]; then # gt 0 ? eq 1
-    echo "Customer Exists!"
+if [ $(find ./DummyData -name "$email" | wc -l) -eq 1 ]; then # gt 0 ? eq 1
     items=()
     items+=($(sed '2q;d' $email)) # deserializes 2nd line into an array
     # declare | grep 'items'
@@ -28,5 +27,6 @@ if [ $(find -name "$email" | wc -l) -eq 1 ]; then # gt 0 ? eq 1
     # echo "${items[@]:3:2} $newBalance ${items[6]}" #>> dummy.txt
 
 else
-    echo "Error: customer not found"
+    echo -e "Error: customer not found\n"
+    # Do nothing
 fi
