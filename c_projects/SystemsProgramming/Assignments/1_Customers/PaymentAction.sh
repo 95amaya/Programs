@@ -2,14 +2,14 @@
 read -p "Email: " email
 read -p "Payment Amount: $" amount
 
-if [ $(find ./DummyData -name "$email" | wc -l) -eq 1 ]; then # gt 0 ? eq 1
+if [ $(find ./Data -name "$email" | wc -l) -eq 1 ]; then # gt 0 ? eq 1
     items=()
-    items+=($(sed '2q;d' $email)) # deserializes 2nd line into an array
+    items+=($(sed '2q;d' ./Data/$email)) # deserializes 2nd line into an array
     # declare | grep 'items'
     ((items[2] = ${items[2]} + $amount)) # Convert to integer and add to balance
     # declare | grep 'items'
     # replace the 2nd line with the new 2nd line and updated account balance
-    sed -i "2s/.*/${items[*]}/" $email
+    sed -i "2s/.*/${items[*]}/" ./Data/$email
     # sed "2s/.*/${items[*]}/" $email > dummy.txt # need asterick
 
     # slower way to do it using array slicing
