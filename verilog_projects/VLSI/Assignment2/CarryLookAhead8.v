@@ -22,7 +22,7 @@
 // Partial-Full-Adder Behavioral Model
 module Partial_Full_Adder(input Cin, input A, input B, output P, output G);
 
-//Sum <= Cin ^ A ^ B;
+//assign Sum = Cin ^ A ^ B;
 assign G = A & B;
 assign P = A ^ B;		
 
