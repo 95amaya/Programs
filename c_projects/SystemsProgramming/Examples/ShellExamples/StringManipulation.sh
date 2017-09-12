@@ -1,4 +1,5 @@
 #!/bin/bash
+printenv
 echo "your current directory is $(pwd)"
 echo "your home directory is $(eval echo "~$USER")"
 
