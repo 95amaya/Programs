@@ -5,9 +5,8 @@ module BCDtoBinary();
 	reg St, clk;
 	
 	wire [9:0] B;
-	wire [11:0] BCD; // Display change in BCD
-	
-	Test T1(clk, A, St, B, BCD); 
+		
+	Test T1(clk, A, St, B); 
 	
 	initial begin
 	   A = 12'h227;

@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 /*************************************************
 Filename: BCDtoBinary.v
-Purpose: Convert 3-bit input -> 10-bit Binary number
+Purpose: Convert 12-bit BCD input -> 10-bit Binary number
 Date Created: 9/2017
 ***************************************************/
 // Constants representing the states
@@ -15,7 +15,7 @@ Date Created: 9/2017
 `define SUB    4'b0011
 `define MAXCNT 4'b1001
 /***************************** Top module state machine ********************************************/
-module Test(input clk, input [11:0] A, input St, output reg [9:0] B, output reg [11:0] BCD);
+module Test(input clk, input [11:0] A, input St, output reg [9:0] B);
 
 reg [3:0] ShiftCount;
 reg [1:0] State;
@@ -36,7 +36,6 @@ always @(posedge clk) begin //or negedge pressReset CLK
                 // CDE = 227 in BCD format  
                 // C = 2, D = 2, E = 7
                 ShiftCount <= 4'b0000;
-                BCD <= A;
                 B <= 10'h000;
                 C <= A[11:8];
                 D <= A[7:4];
@@ -95,9 +94,6 @@ always @(*) begin
     $monitor("BCD = %b-%b-%b", C, D, E);
     $monitor("B = %b", B);
     
-//    $fmonitor(f,"----- %s -----", State == 2'b00 ? "1.)START" : (State == 2'b01 ? "2.)CHECK" : (State == 2'b10 ? "3.)SHIFT" : "4.)DONE")));
-//    $fmonitor(f,"BCD = %b-%b-%b", C, D, E);
-//    $fmonitor(f,"B = %b", B);
     if(State >= 0) begin
         $fdisplay(f,"----- %s -----", State == 2'b00 ? "1.)START" : (State == 2'b01 ? "2.)CHECK" : (State == 2'b10 ? "3.)SHIFT" : "4.)DONE")));
         $fdisplay(f,"BCD = %b-%b-%b", C, D, E);
