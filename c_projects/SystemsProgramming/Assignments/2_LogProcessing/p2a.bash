@@ -1,59 +1,31 @@
 #!/bin/bash
 
-# echo Hello World
-# items=()
-# while read -r line || [[ -n "$line" ]]; do # Deals with file that does not have \n at end to get last line
-#     items+=( $line )
-#     # echo "line = $line"
-# done
+# Using grep to do an inverted match on all lines ending with 2017
+# Outputting these lines to text files for further processing 
+grep -v "2017$" ./lastlog1.out > ./p2aData/log1_nonusers
+grep -v "2017$" ./lastlog2.out > ./p2aData/log2_nonusers
 
-# # declare | grep 'items'
-# echo "items = ${items[@]}"
+# p2a.sed script commands
+# Need to remove the first line of the log file because it does not contain relavent info
+# Then extract user IDs from each line by searching for regular expression and writing over line with that matched pattern
+# sed -e '1d' -e 's/\([a-z]*[0-9]*\).*/\1/g' ./p2aData/log1_nonusers.txt > ./p2aData/log2_nonusers_formatted.txt
+# sed -e '1d' -e 's/\([a-z]*[0-9]*\).*/\1/g' ./p2bData/log2_nonusers.txt > ./p2aData/log2_nonusers_formatted.txt
 
-# grep -wvhr 2017 | sed -n '/2016/p'
-# grep -wvhr 2017 | sed -n 's/2016/2017/p'
+sed -f p2a.sed ./p2aData/log1_nonusers > ./p2aData/log1_IDs
+sed -f p2a.sed ./p2aData/log2_nonusers > ./p2aData/log2_IDs
 
-# grep -wvhr 2017 | sed -n 's/[a-z]//p' # match any lower case letters 1 time and replace with nothing
-# grep -wvhr 2017 | sed -n 's/[a-z]*[0-9]*//p' # match any lower case letters many times and replace with nothing
-# grep -wvhr 2017 | sed -n 's/.*/Hello/2' # replace line with hello
-# grep -wvhr 2017 | sed -n 's/\([a-z]*[0-9]*\).*/\1/p' # replace line with regex expression on first match
-# grep -wvhr 2017 | sed -n 's/\([a-z]*[0-9]*\).*/\1/p' dummy.txt
+# p2aDollar.sed
+# Need to make sure to add a '$' to the end of the line to make it match uniquely for these regex
+# Need to escape with '\$' to add '$'
+# sed -e 's/$/\$/g' sed1.txt > ./sed12.txt 
 
-# grep -wvhr 2017 ./dummy.txt # w - match word, v - invert match, h - no filename, r - recursive search
+# Only need to do it to one file because it will be compared to the other to find the intersection
+sed -f p2aDollar.sed ./p2aData/log1_IDs > ./p2aData/log1_dollar
 
-# grep -wv 2017 ./lastlog1.out > dummy.txt
-# grep -wv 2017 ./lastlog2.out >> dummy.txt
-# sed -n 's/\([a-z]*[0-9]*\).*/\1/p' ./dummy.txt > sed1.txt 
-# grep -wc js45 ./sed1.txt 
+# Find the intersection of the 2 files, one with regex, and the other with normal user IDs
+# Make sure there is not '$' by itself in the regexp file otherwise output will be wrong
+grep -f ./p2aData/log1_dollar ./p2aData/log2_IDs > ./p2aData/p2a.out
 
-# sed -f p2a.sed dummy.txt
-
-# create names
-# create names with + $
-# use grep -f to match files
-# grep -wv 2017 ./lastlog1.out > dummy1.txt
-# grep -wv 2017 ./lastlog2.out > dummy2.txt
-# sed -n 's/\([a-z]*[0-9]*\).*/\1/p' ./dummy1.txt > sed1.txt 
-# sed -n 's/\([a-z]*[0-9]*\).*/\1/p' ./dummy2.txt > sed2.txt 
-# sed -n 's/$/\$/p' sed1.txt > ./sed11.txt 
-# sed -n 's/$/\$/p' sed2.txt > ./sed22.txt
-# grep -f sed11.txt sed22.txt > test1.txt # want to match by word, NOT consistent
-# cat ./test1.txt | wc -l
-# # grep -f test1.txt sed11.txt | wc -l
-# # grep -f test1.txt sed22.txt | wc -l
-# grep -f sed11.txt test1.txt | wc -l
-# grep -f sed22.txt test1.txt | wc -l
-
-
-# diff sed1.txt sed2.txt
-# Append files on top of each other
-# sort by name
-# use uniq -c to get 
-# use sed to to inclue user ids with count = 2 and remove count
-# grep -v "2017$" ./lastlog1.out > dummy.txt # search for string at end of file
-grep -wv 2017 ./lastlog1.out > dummy.txt
-grep -wv 2017 ./lastlog2.out >> dummy.txt
-sed -n 's/\([a-z]*[0-9]*\).*/\1/p' ./dummy.txt > sed.txt 
-sort sed.txt | uniq -c > sedCount.txt # Sort and count occurences
-# sed -n 's/\( *2 [a-z]*[0-9]*\).*/\1/p' ./sedCount.txt
-sed -n 's/ *2 \([a-z]*[0-9]*\).*/\1/p' ./sedCount.txt | wc -l
+# This was used for testing purproses to check for a match between p2a and p2b output
+# sort ./p2aData/p2a.out > ./p2aData/p2aSorted.out
+# cat ./p2aData/p2aSorted.out | wc -l

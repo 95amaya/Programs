@@ -1,1 +1,2 @@
-s/[0-9]* //2   replaced the second column
+1d
+s/\([a-z]*[0-9]*\).*/\1/g 
