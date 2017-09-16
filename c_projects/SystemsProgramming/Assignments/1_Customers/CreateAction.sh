@@ -13,8 +13,8 @@ if [ $(find ./Data -name "$email" | wc -l) -eq 1 ]; then # gt 0 ? eq 1
 else
     # Create Customer File
     # echo "Creating Customer File..."
-    echo "$email $firstname $lastname" > $email # Redirect to file
-    echo "$apt $monthlyrent $balance $duedate" >> $email # Append to file
+    echo "$email $firstname $lastname" > ./Data/$email # Redirect to file
+    echo "$apt $monthlyrent $balance $duedate" >> ./Data/$email # Append to file
 
     # echo completion
     echo -e "\n------ New Customer ------"
