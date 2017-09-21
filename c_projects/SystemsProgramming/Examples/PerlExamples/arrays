@@ -1,0 +1,24 @@
+#!/usr/bin/perl -w
+#arrays
+my @fruit = ("apple", "grape", "orange");
+my @veg = ("broccoli", "green beans", "asparagus", "corn");
+print "fruit: @fruit\n";
+print "veg: @veg\n";
+print "fruit[1] is $fruit[1] \n";
+print "last subscript for fruit is ", $#fruit, "\n";
+print "last subscript for veg is ", $#veg, "\n";
+print "the last element of veg: $veg[$#veg] \n";
+
+print "A slice of fruit:", @fruit[0,2], "\n";
+print "A slice of veg:", @veg[1..3], "\n";
+print "Another slice of veg:", @veg[0,2..3], "\n";
+my @newVeg = @veg[0,2..3];
+print "newVeg is @newVeg\n";
+my @newFruit = @fruit;
+# replace a fruit
+$fruit[1] = 'maynard';
+# add a fruit to the end of the fruit array
+$fruit[$#fruit+1] = "clark";
+print "fruit: @fruit\n";
+print "newFruit: @newFruit\n";
+

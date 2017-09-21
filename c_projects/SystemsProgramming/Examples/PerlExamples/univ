@@ -1,0 +1,21 @@
+#!/usr/bin/perl -w
+my $university;
+print "Enter the name of your university:";
+while ($university = <STDIN>) {
+    chomp $university;             # remove the linefeed
+    $university = lc $university;  # lowercase 
+    if ($university eq "utsa") {
+        print "blue and orange\n";
+    }
+    elsif ($university eq "ut") {
+        print "burnt orange\n";
+    }
+    elsif ($university eq "tamu") {
+        print "moron\n";
+    }
+    else {
+        print "unknown university\n";
+    }
+    print "Enter the name of your university:";
+} 
+print "\n";

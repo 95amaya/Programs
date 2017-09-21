@@ -1,0 +1,29 @@
+#!/usr/bin/perl -w
+print "what is your first name? ";
+defined(my $firstName = <STDIN>) 
+    or die "input error from STDIN (likely EOF)";
+chomp $firstName;   # remove newline
+print $firstName, "\n";
+print "what is your last name? ";
+defined(my $lastName = <STDIN>) 
+    or die "input error from STDIN (likely EOF)";
+chomp $lastName;
+print $lastName, "\n";
+print "what is your major? ";
+defined(my $major = <STDIN> )
+    or die "input error from STDIN (likely EOF)";
+chomp $major;
+print $major, "\n";
+
+# We can use pattern matching to parse out values.  
+# More about that later. 
+print "What is your first name, last name, and major (separate with",
+      " commas)";
+defined(my $line = <STDIN> )
+    or die "input error from STDIN (likely EOF)";
+$_ = $line;
+my ($first, $last, $maj) = /([^,]*),([^,]*),([a-zA-Z]*)/;
+print "first name is ", $first, "\n";
+print "last name is ", $last, "\n";
+print "major is ", $maj, "\n";
+

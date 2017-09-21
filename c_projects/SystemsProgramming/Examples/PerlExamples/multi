@@ -1,0 +1,22 @@
+#!/usr/bin/perl 
+my @pets = ('cat', 'dog', 'bird', 'bat');
+print "@pets\n";
+
+($x, $y, $z) = @pets;
+print "x=$x, y=$y, z=$z\n";
+
+($a, $b, $c) = (10..12);
+print "a=$a, b=$b, c=$c\n";
+
+$line = "clark:x:1000:1000:clark:/home/clark:/bin/tcsh";
+($login, $pwd, $uid, $gid, $name, $home) = split /:/, $line;
+print "login=$login, uid=$uid, gid=$gid, home=$home\n";
+
+($one, $two, $three) = split /:/, $line, 3;
+print "one=$one, two=$two, three=$three\n";
+
+my $sentence = "If I wanted bling, I would get gold not perl.";
+# Use space, comma, and period as delimiters
+my @words = split (/[ ,.]/, $sentence);
+print "@words\n";
+
