@@ -1,0 +1,11 @@
+# duplicated.txt
+# use awk to remove duplicates
+# gawk '!seen[$0]++' duplicated.txt
+# gawk 'seen[$0]++' duplicated.txt - shows duplicates
+Hello world
+Hello world
+Hi
+Guten tag
+Hi
+Hi
+Hola

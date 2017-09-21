@@ -1,0 +1,10 @@
+-rw------- 1 rslavin faculty    120 Aug 28  2017 assignment1.zip
+-rw------- 1 rslavin faculty 132450 Aug 28 13:29 bigfile.zip
+-rw------- 1 clark   faculty     12 Aug 28 13:29 file1.txt
+-rw------- 1 rslavin faculty    540 Aug 28 13:29 file2.txt
+-rw------- 1 clark   faculty    708 Aug 28 13:29 file3.zip
+-rw------- 1 rslavin faculty     70 Aug 28 13:30 input
+drwxrwxr-x 2 rslavin faculty     70 Aug 28 13:30 more files
+-rw------- 1 rslavin faculty     65 Aug 28 13:30 output
+-rw------- 1 rslavin faculty     12 Aug 28 13:31 someScript.sh
+-rw------- 1 rslavin faculty    673 Aug 28 13:29 test data.zip
