@@ -9,7 +9,7 @@ BEGIN { FS=","; printf("<table>\n"); }
     for(i=1; i <= NF; i++)
     {
         #printf("i: %d, $i: %s\n", i, $i);
-        printf("\t\t<tr>%s<\\tr>\n", $i);
+        printf("\t\t<td>%s<\\td>\n", $i);
     }
     printf("\t<\\tr>\n");
 }

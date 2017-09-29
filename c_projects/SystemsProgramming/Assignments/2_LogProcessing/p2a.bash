@@ -24,5 +24,5 @@ grep -f ./p2aData/log1_dollar ./p2aData/log2_IDs > ./p2aData/p2a.out
 
 # This was used for testing purproses to check for a match between p2a and p2b output
 # cat ./p2aData/p2a.out | wc -l
-# sort ./p2aData/p2a.out > ./p2aData/p2aSorted.out
+sort ./p2aData/p2a.out > ./p2aData/p2aSorted.out
 # cat ./p2aData/p2aSorted.out | wc -l

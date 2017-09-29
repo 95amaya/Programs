@@ -1,17 +1,25 @@
 # gawk -f rec5-3.awk dummydata.txt
-# gawk -v test="100" -f rec5-3.awk dummydata.txt
-BEGIN { printf("---- Start ----\n"); print test; }
+# gawk -v user="rslavin" -f rec5-3.awk dummydata.txt
+BEGIN { 
+    sum = 0;
+    count = 0;
+    # print test; 
+}
 {
-    #process lines getting username 
-    #printf("\t<tr>\n");
-    #for(i=1; i <= NF; i++)
-    #{
-    #    #printf("i: %d, $i: %s\n", i, $i);
-    #    printf("\t\t<tr>%s<\\tr>\n", $i);
-    #}
-    #printf("\t<\\tr>\n");
+    if(match($3, user)) {
+        print $0
+        if($NF ~ /\.zip$/) {
+            sum += $5;
+            count++;
+        }
+    }
 }
 END { 
-    printf("Zip file statistics for USER (change later)\n");
-    printf("Count: XX | Total size: XX | Average size: XX\n");    
+    printf("Zip file statistics for %s\n", user);
+    if (count > 0) {
+        avg = sum/count
+        printf("Count: %d | Total size: %d | Average size: %.2lf\n", count, sum, avg); 
+    }
+    else 
+        print "No files matched"; 
 }
