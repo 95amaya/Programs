@@ -1,0 +1,25 @@
+\o Program:		@(#)$CDS: libManager version 6.1.6 - CAT33 07/17/2014 16:32 (sjfnl836) $
+\o Sub version:		sub-version  s011 
+\o Arguments:		-mpssession virtuoso4130 -mpshost crosby 
+\o Working Directory:	crosby:/home/UTSARR/afn946/NAND_3in/NAND_3in
+\o 64-bit offsets
+\o Qt version: 		4.7.2
+\o Log file is "/home/UTSARR/afn946/NAND_3in/NAND_3in/libManager.log".
+\o Opening libManager window.
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrResizeWindow(cdsLibManager list(17 58 600 462))
+\o changeWorkingDir("/home/UTSARR/afn946/NAND_3in/NAND_3in") unnecessary.
+\o ddSetForcedLib("") unnecessary.
+\o MPS service: map window
+\w Warning: LIB basic from File /home/UTSARR/afn946/cds.lib Line 8 redefines
+\w LIB basic from File /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/UTSARR/afn946/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w to suppress this warning message.
+\o Library Manager customization server connected.
+\a nrSetWindowVisibility(cdsLibManager "hide")
+\o libManager is exiting.
+\a exit(0)

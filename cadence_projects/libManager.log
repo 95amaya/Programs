@@ -1,0 +1,504 @@
+\o Program:		@(#)$CDS: libManager version 6.1.6 - CAT33 07/17/2014 16:32 (sjfnl836) $
+\o Sub version:		sub-version  s011 
+\o Arguments:		-mpssession virtuoso10075 -mpshost crosby 
+\o Working Directory:	crosby:/home/UTSARR/afn946/VLSI
+\o 64-bit offsets
+\o Qt version: 		4.7.2
+\o Log file is "/home/UTSARR/afn946/VLSI/libManager.log".
+\o Opening libManager window.
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrResizeWindow(cdsLibManager list(17 58 600 462))
+\o changeWorkingDir("/home/UTSARR/afn946/VLSI") unnecessary.
+\o ddSetForcedLib("") unnecessary.
+\o MPS service: map window
+\w Warning: LIB basic from File /home/UTSARR/afn946/cds.lib Line 8 redefines
+\w LIB basic from File /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/UTSARR/afn946/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w to suppress this warning message.
+\o Library Manager customization server connected.
+\a cdsLibManager->libListBox->value = "ahdlLib"
+\a cdsLibManager->libListBox->value = "XOR"
+\a cdsLibManager->libLineEdit->value = "XOR"
+\a cdsLibManager->cellListBox->value = "Nand"
+\a cdsLibManager->cellLineEdit->value = "Nand"
+\a cdsLibManager->viewListBox->value = "layout"
+\a cdsLibManager->viewLineEdit->value = "layout"
+\a cdsLibManager->viewListBox->value = "symbol"
+\a cdsLibManager->viewLineEdit->value = "symbol"
+\a cdsLibManager->viewListBox->value = "layout"
+\a cdsLibManager->viewLineEdit->value = "layout"
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "layout"
+\o MPS request: edit design
+\a nrListItemAction(cdsLibManager->gdmXTView 1 0)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->cellListBox->value = nil
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->cellLineEdit->value = ""
+\a cdsLibManager->libLineEdit->value = ""
+\w Warning: LIB basic from File /home/UTSARR/afn946/cds.lib Line 8 redefines
+\w LIB basic from File /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/UTSARR/afn946/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w to suppress this warning message.
+\a cdsLibManager->libListBox->value = "XOR"
+\a cdsLibManager->libLineEdit->value = "XOR"
+\a cdsLibManager->cellListBox->value = "Nand"
+\a cdsLibManager->cellLineEdit->value = "Nand"
+\a cdsLibManager->viewListBox->value = "layout"
+\a cdsLibManager->viewLineEdit->value = "layout"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "layout"
+\a cdsLibManager->viewLineEdit->value = "layout"
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->viewListBox->value = "symbol"
+\a cdsLibManager->viewLineEdit->value = "symbol"
+\a cdsLibManager->viewListBox->value = "layout"
+\a cdsLibManager->viewLineEdit->value = "layout"
+\a cdsLibManager->viewListBox->value = "symbol"
+\a cdsLibManager->viewLineEdit->value = "symbol"
+\a cdsLibManager->viewListBox->value = "extracted"
+\a cdsLibManager->viewLineEdit->value = "extracted"
+\a cdsLibManager->cellListBox->value = "sim_Nand"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellLineEdit->value = "sim_Nand"
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\o MPS request: edit design
+\a nrListItemAction(cdsLibManager->gdmXTView 0 0)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a lmgrLogShowPopup("mainListPopup1" 24 16 2 "sim_Nand")
+\a lmgrLogShowPopup("mainListPopup1" 18 17 2 "sim_Nand")
+\a cdsLibManager->copySimpleButton->value = t
+\a basicCopyForm->CategoryCellsEdit->value = "*"
+\a basicCopyForm->CellsSkipLibraries->value = t
+\a basicCopyForm->CellsSkipLibrariesEdit->value = "*"
+\a basicCopyForm->CellsSkipLibrariesEdit->value = "*"
+\a basicCopyForm->ViewsSkipLibraries->value = t
+\a basicCopyForm->ViewsSkipLibrariesEdit->value = "*"
+\a basicCopyForm->CopyFromLibrary->value = "Inverter"
+\a basicCopyForm->CopyToLibrary->value = "Inverter"
+\a basicCopyForm->CopyFromLibrary->value = "XOR"
+\a basicCopyForm->CopyFromCell->value = "sim_Nand"
+\a basicCopyForm->CopyToLibrary->value = "XOR"
+\a basicCopyForm->CopyToCell->value = "sim_Nand"
+\a basicCopyForm->CellsViewsToCopy->value = "schematic"
+\a basicCopyForm->CellsSkipLibrariesEdit->value = ""
+\a basicCopyForm->CellsSkipLibrariesEdit->value = "Inverter NAND_3in NCSU_Analog_Parts NCSU_Digital_Parts NCSU_TechLib_ami06 NCSU_TechLib_ami16 NCSU_TechLib_hp06 NCSU_TechLib_tsmc02 NCSU_TechLib_tsmc02d NCSU_TechLib_tsmc03 NCSU_TechLib_tsmc03d NCSU_TechLib_tsmc04_4M2P NOR_3in US_8ths ahdlLib analogLib basic cdsDefTechLib functional rfExamples rfLib test"
+\a basicCopyForm->ViewsSkipLibrariesEdit->value = "Inverter NAND_3in NCSU_Analog_Parts NCSU_Digital_Parts NCSU_TechLib_ami06 NCSU_TechLib_ami16 NCSU_TechLib_hp06 NCSU_TechLib_tsmc02 NCSU_TechLib_tsmc02d NCSU_TechLib_tsmc03 NCSU_TechLib_tsmc03d NCSU_TechLib_tsmc04_4M2P NOR_3in US_8ths ahdlLib analogLib basic cdsDefTechLib functional rfExamples rfLib test"
+\a nrSetWindowVisibility(basicCopyForm "show")
+\a nrSetCurrentWindow(basicCopyForm)
+\a nrResizeWindow(basicCopyForm list(95 38 444 618))
+\a basicCopyForm->CopyToCell->value = "sim_XOR"
+\a basicCopyForm->Apply->value = t
+\o Beginning simple copy to library "XOR".
+\o Processing files to be copied...
+\a nrSetWindowVisibility(workingDialogForm "show")
+\a nrSetCurrentWindow(workingDialogForm)
+\a nrSetWindowVisibility(workingDialogForm "show")
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(workingDialogForm)
+\a nrResizeWindow(workingDialogForm list(169 191 296 129))
+\a workingDialogForm->Close->value = t
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->cellListBox->value = nil
+\a cdsLibManager->libLineEdit->value = ""
+\w Warning: LIB basic from File /home/UTSARR/afn946/cds.lib Line 8 redefines
+\w LIB basic from File /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/UTSARR/afn946/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w to suppress this warning message.
+\a cdsLibManager->libListBox->value = "XOR"
+\a cdsLibManager->libLineEdit->value = "XOR"
+\a cdsLibManager->cellListBox->value = "sim_Nand"
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a basicCopyForm->CellsSkipLibrariesEdit->value = "*"
+\a basicCopyForm->CellsSkipLibrariesEdit->value = "Inverter NAND_3in NCSU_Analog_Parts NCSU_Digital_Parts NCSU_TechLib_ami06 NCSU_TechLib_ami16 NCSU_TechLib_hp06 NCSU_TechLib_tsmc02 NCSU_TechLib_tsmc02d NCSU_TechLib_tsmc03 NCSU_TechLib_tsmc03d NCSU_TechLib_tsmc04_4M2P NOR_3in US_8ths ahdlLib analogLib basic cdsDefTechLib functional rfExamples rfLib test"
+\a cdsLibManager->cellListBox->value = "sim_XOR"
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = "sim_Nand"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = "sim_XOR"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellLineEdit->value = "sim_XOR"
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\o MPS request: edit design
+\a nrListItemAction(cdsLibManager->gdmXTView 0 0)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = "Inverter"
+\a cdsLibManager->cellListBox->value = nil
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->cellLineEdit->value = ""
+\a cdsLibManager->libLineEdit->value = "Inverter"
+\a cdsLibManager->cellListBox->value = "inverter"
+\a cdsLibManager->cellLineEdit->value = "inverter"
+\a cdsLibManager->viewListBox->value = "layout"
+\a cdsLibManager->viewLineEdit->value = "layout"
+\a cdsLibManager->viewListBox->value = "symbol"
+\a cdsLibManager->viewLineEdit->value = "symbol"
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "symbol"
+\o MPS request: edit design
+\a nrListItemAction(cdsLibManager->gdmXTView 2 0)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = "XOR"
+\a cdsLibManager->cellListBox->value = nil
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->cellLineEdit->value = ""
+\a cdsLibManager->libLineEdit->value = "XOR"
+\a cdsLibManager->cellListBox->value = "sim_Nand"
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = "sim_XOR"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = nil
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a nrListItemAction(cdsLibManager->cellListBox 2 0)
+\a cdsLibManager->cellListBox->value = "sim_XOR"
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\o MPS request: edit design
+\a cdsLibManager->cellLineEdit->value = "sim_XOR"
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a lmgrLogShowPopup("mainListPopup1" 27 33 2 "sim_XOR")
+\a cdsLibManager->editRenameButton->value = t
+\a basicRenameForm->basicRenameFromEdit->value = "sim_XOR"
+\a nrSetWindowVisibility(basicRenameForm "show")
+\a basicRenameForm->basicRenameToEdit->value = "sim_XOR"
+\a nrSetCurrentWindow(basicRenameForm)
+\a nrResizeWindow(basicRenameForm list(146 174 343 180))
+\a basicRenameForm->basicRenameToEdit->value = "sim_And"
+\a basicRenameForm->OK->value = t
+\o Renaming Cell "sim_XOR" to "sim_And" in library "XOR".
+\a nrSetWindowVisibility(workingDialogForm "show")
+\a nrSetCurrentWindow(workingDialogForm)
+\a nrResizeWindow(workingDialogForm list(172 191 290 129))
+\a workingDialogForm->Close->value = t
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->cellListBox->value = nil
+\a cdsLibManager->libLineEdit->value = ""
+\w Warning: LIB basic from File /home/UTSARR/afn946/cds.lib Line 8 redefines
+\w LIB basic from File /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/UTSARR/afn946/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w to suppress this warning message.
+\a cdsLibManager->libListBox->value = "XOR"
+\a cdsLibManager->libLineEdit->value = "XOR"
+\a cdsLibManager->cellListBox->value = "sim_And"
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a lmgrLogShowPopup("mainListPopup1" 29 20 2 "sim_And")
+\a cdsLibManager->cellLineEdit->value = "sim_And"
+\a cdsLibManager->copySimpleButton->value = t
+\a basicCopyForm->CellsSkipLibrariesEdit->value = "*"
+\a basicCopyForm->CellsViewsToCopy->value = ""
+\a basicCopyForm->ViewsSkipLibrariesEdit->value = "*"
+\a basicCopyForm->CopyFromCell->value = ""
+\a basicCopyForm->CopyToCell->value = ""
+\a basicCopyForm->CopyFromLibrary->value = ""
+\a basicCopyForm->CopyToLibrary->value = ""
+\a basicCopyForm->CopyFromLibrary->value = "Inverter"
+\a basicCopyForm->CopyToLibrary->value = "Inverter"
+\a basicCopyForm->CopyFromLibrary->value = "XOR"
+\a basicCopyForm->CopyFromCell->value = "sim_And"
+\a basicCopyForm->CopyToLibrary->value = "XOR"
+\a basicCopyForm->CopyToCell->value = "sim_And"
+\a basicCopyForm->CellsViewsToCopy->value = "schematic"
+\a basicCopyForm->CellsSkipLibrariesEdit->value = ""
+\a basicCopyForm->CellsSkipLibrariesEdit->value = "Inverter NAND_3in NCSU_Analog_Parts NCSU_Digital_Parts NCSU_TechLib_ami06 NCSU_TechLib_ami16 NCSU_TechLib_hp06 NCSU_TechLib_tsmc02 NCSU_TechLib_tsmc02d NCSU_TechLib_tsmc03 NCSU_TechLib_tsmc03d NCSU_TechLib_tsmc04_4M2P NOR_3in US_8ths ahdlLib analogLib basic cdsDefTechLib functional rfExamples rfLib test"
+\a basicCopyForm->ViewsSkipLibrariesEdit->value = "Inverter NAND_3in NCSU_Analog_Parts NCSU_Digital_Parts NCSU_TechLib_ami06 NCSU_TechLib_ami16 NCSU_TechLib_hp06 NCSU_TechLib_tsmc02 NCSU_TechLib_tsmc02d NCSU_TechLib_tsmc03 NCSU_TechLib_tsmc03d NCSU_TechLib_tsmc04_4M2P NOR_3in US_8ths ahdlLib analogLib basic cdsDefTechLib functional rfExamples rfLib test"
+\a nrSetWindowVisibility(basicCopyForm "show")
+\a nrSetCurrentWindow(basicCopyForm)
+\a nrResizeWindow(basicCopyForm list(95 38 444 618))
+\a basicCopyForm->CopyToCell->value = "sim_XOR"
+\a nrDialogAccept(basicCopyForm)
+\a basicCopyForm->OK->value = t
+\a basicCopyForm->CopyToCell->value = "sim_XOR"
+\o Beginning simple copy to library "XOR".
+\o Processing files to be copied...
+\a nrSetWindowVisibility(workingDialogForm "show")
+\a nrSetCurrentWindow(workingDialogForm)
+\a nrSetWindowVisibility(workingDialogForm "show")
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(workingDialogForm)
+\a nrResizeWindow(workingDialogForm list(0 25 296 129))
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->cellListBox->value = nil
+\a cdsLibManager->cellLineEdit->value = ""
+\a cdsLibManager->libLineEdit->value = ""
+\w Warning: LIB basic from File /home/UTSARR/afn946/cds.lib Line 8 redefines
+\w LIB basic from File /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/UTSARR/afn946/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w to suppress this warning message.
+\a cdsLibManager->libListBox->value = "XOR"
+\a cdsLibManager->libLineEdit->value = "XOR"
+\a cdsLibManager->cellListBox->value = "sim_And"
+\a cdsLibManager->cellLineEdit->value = "sim_And"
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a basicCopyForm->CellsSkipLibrariesEdit->value = "*"
+\a basicCopyForm->CellsSkipLibrariesEdit->value = "Inverter NAND_3in NCSU_Analog_Parts NCSU_Digital_Parts NCSU_TechLib_ami06 NCSU_TechLib_ami16 NCSU_TechLib_hp06 NCSU_TechLib_tsmc02 NCSU_TechLib_tsmc02d NCSU_TechLib_tsmc03 NCSU_TechLib_tsmc03d NCSU_TechLib_tsmc04_4M2P NOR_3in US_8ths ahdlLib analogLib basic cdsDefTechLib functional rfExamples rfLib test"
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "sim_XOR"
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellLineEdit->value = "sim_XOR"
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\o MPS request: edit design
+\a nrListItemAction(cdsLibManager->gdmXTView 0 0)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->cellListBox->value = "sim_Nand"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = "sim_XOR"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a lmgrLogShowPopup("mainListPopup1" 32 46 2 "sim_XOR")
+\a cdsLibManager->cellLineEdit->value = "sim_XOR"
+\a cdsLibManager->editRenameButton->value = t
+\a nrSetWindowVisibility(basicRenameForm "show")
+\a basicRenameForm->basicRenameToEdit->value = "sim_XOR"
+\a nrSetCurrentWindow(basicRenameForm)
+\a nrResizeWindow(basicRenameForm list(146 174 343 180))
+\a basicRenameForm->basicRenameToEdit->value = "sim_GateModel"
+\a basicRenameForm->OK->value = t
+\o Renaming Cell "sim_XOR" to "sim_GateModel" in library "XOR".
+\a nrSetWindowVisibility(workingDialogForm "show")
+\a nrSetCurrentWindow(workingDialogForm)
+\a nrResizeWindow(workingDialogForm list(172 191 290 129))
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->cellListBox->value = nil
+\a cdsLibManager->libLineEdit->value = ""
+\w Warning: LIB basic from File /home/UTSARR/afn946/cds.lib Line 8 redefines
+\w LIB basic from File /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/UTSARR/afn946/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w to suppress this warning message.
+\a cdsLibManager->libListBox->value = "XOR"
+\a cdsLibManager->libLineEdit->value = "XOR"
+\a cdsLibManager->cellLineEdit->value = ""
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->libListBox->value = "XOR"
+\a lmgrLogShowPopup("mainListPopup0" 20 56 2 "XOR")
+\a cdsLibManager->libLineEdit->value = "XOR"
+\a cdsLibManager->editRenameButton->value = t
+\a basicRenameForm->basicRenameFromEdit->value = "XOR"
+\a nrSetWindowVisibility(basicRenameForm "show")
+\a basicRenameForm->basicRenameToEdit->value = "XOR"
+\a nrSetCurrentWindow(basicRenameForm)
+\a nrResizeWindow(basicRenameForm list(146 174 343 180))
+\a basicRenameForm->basicRenameToEdit->value = "GateModel"
+\a basicRenameForm->OK->value = t
+\o Checking rename library for access locks.
+\o Renaming library "XOR" to "GateModel".
+\a nrSetWindowVisibility(workingDialogForm "show")
+\a nrSetCurrentWindow(workingDialogForm)
+\a nrResizeWindow(workingDialogForm list(172 191 290 129))
+\a cdsLibManager->libListBox->value = nil
+\a cdsLibManager->libLineEdit->value = ""
+\w Warning: LIB basic from File /home/UTSARR/afn946/cds.lib Line 8 redefines
+\w LIB basic from File /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/UTSARR/afn946/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w to suppress this warning message.
+\a cdsLibManager->libListBox->value = "XOR"
+\a cdsLibManager->libLineEdit->value = "XOR"
+\o Batching session updates...
+\a nrSetCurrentWindow(cdsLibManager)
+\a cdsLibManager->libListBox->value = nil
+\w Warning: LIB basic from File /home/UTSARR/afn946/cds.lib Line 8 redefines
+\w LIB basic from File /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/UTSARR/afn946/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/UTSARR/afn946/cds.lib Line 8 redefines
+\w LIB basic from File /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/UTSARR/afn946/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/opt2/cadence/ic615/tools.lnx86/dfII/etc/cdsDotLibs/composer/cds.lib
+\w to suppress this warning message.
+\a cdsLibManager->libListBox->value = "US_8ths"
+\a cdsLibManager->libListBox->value = "NOR_3in"
+\a cdsLibManager->libListBox->value = "GateModel"
+\a cdsLibManager->libLineEdit->value = "GateModel"
+\a cdsLibManager->cellListBox->value = "Nand"
+\a cdsLibManager->cellListBox->value = "sim_And"
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = "sim_GateModel"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = "sim_Nand"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = "sim_GateModel"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = "sim_And"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = "Nand"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->cellLineEdit->value = "Nand"
+\a cdsLibManager->viewListBox->value = "extracted"
+\a cdsLibManager->viewLineEdit->value = "extracted"
+\a cdsLibManager->viewListBox->value = "layout"
+\a cdsLibManager->viewLineEdit->value = "layout"
+\a cdsLibManager->viewListBox->value = "symbol"
+\a cdsLibManager->viewLineEdit->value = "symbol"
+\a cdsLibManager->showFilesToggle->value = t
+\a cdsLibManager->showFilesToggle->value = nil
+\a cdsLibManager->viewListBox->value = "layout"
+\a cdsLibManager->viewLineEdit->value = "layout"
+\a cdsLibManager->cellListBox->value = "sim_GateModel"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = nil
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->cellListBox->value = "sim_And"
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = "sim_GateModel"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = "Nand"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->cellLineEdit->value = "Nand"
+\a cdsLibManager->libListBox->value = "Inverter"
+\a cdsLibManager->cellListBox->value = nil
+\a cdsLibManager->cellLineEdit->value = ""
+\a cdsLibManager->libListBox->value = "GateModel"
+\a cdsLibManager->libLineEdit->value = "GateModel"
+\a cdsLibManager->cellListBox->value = "sim_And"
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = "sim_GateModel"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = "sim_Nand"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "schematic"
+\a cdsLibManager->viewLineEdit->value = "schematic"
+\a cdsLibManager->cellListBox->value = "Nand"
+\a cdsLibManager->viewLineEdit->value = ""
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->cellLineEdit->value = "Nand"
+\a cdsLibManager->viewListBox->value = "extracted"
+\a cdsLibManager->viewLineEdit->value = "extracted"
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "symbol"
+\a cdsLibManager->viewLineEdit->value = "symbol"
+\a cdsLibManager->viewListBox->value = "layout"
+\a cdsLibManager->viewLineEdit->value = "layout"
+\a cdsLibManager->viewListBox->value = nil
+\a cdsLibManager->viewListBox->value = "layout"
+\o MPS request: edit design
+\a nrListItemAction(cdsLibManager->gdmXTView 1 0)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetWindowVisibility(cdsLibManager "hide")
+\o libManager is exiting.
+\a exit(0)

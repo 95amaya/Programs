@@ -1,0 +1,6 @@
+SOFTINCLUDE /home/UTSARR/afn946/cds.lib
+DEFINE Inverter /home/UTSARR/afn946/VLSI/Inverter
+DEFINE NAND_3in /home/UTSARR/afn946/VLSI/NAND_3in
+DEFINE NOR_3in /home/UTSARR/afn946/VLSI/NOR_3in
+#Removed by ddDeleteObj: DEFINE XOR /home/UTSARR/afn946/VLSI/XOR
+DEFINE GateModel /home/UTSARR/afn946/VLSI/GateModel
