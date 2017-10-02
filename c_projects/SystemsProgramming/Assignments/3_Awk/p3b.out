@@ -1,21 +1,21 @@
 Name         Flight     Seats Total Cost
-Moss         H100.15005     2     110.00
-Moss         H222.15005     2     170.00
-Moss         H200.15010     2      75.00
-Moss         H333.15010     2     200.00
+Moss         H100.15005     2     220.00
+Moss         H222.15005     2     340.00
+Moss         H200.15010     2     150.00
+Moss         H333.15010     2     400.00
                         Total:   1110.00
-Corn         H222.15005    10     170.00
-Corn         H333.15010     5     200.00
+Corn         H222.15005    10    1700.00
+Corn         H333.15010     5    1000.00
                         Total:   2700.00
 Loafer       H444.15001     1     125.00
 Loafer       H333.15010     1     200.00
                         Total:    325.00
-Sandler      H100.15005     3     110.00
-Sandler      H222.15005     3     170.00
-Sandler      H333.15010     3     200.00
+Sandler      H100.15005     3     330.00
+Sandler      H222.15005     3     510.00
+Sandler      H333.15010     3     600.00
                         Total:   1440.00
-Toast        H333.15010     2     200.00
-Toast        H444.15015     2     125.00
+Toast        H333.15010     2     400.00
+Toast        H444.15015     2     250.00
                         Total:    650.00
 Flight     Total Seats
 H333.15010         13

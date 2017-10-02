@@ -17,7 +17,7 @@ BEGIN {
     # Flight is associative array holding values of seats per flight
     else if($1 == "RESERVE")
     {
-        printf("%-12s %10s %5s %10s\n", Name, $2, $3, $4);
+        printf("%-12s %10s %5s %10.2lf\n", Name, $2, $3, $4*$3);
         CustCost += $3*$4;
         Flight[$2] += $3;
     }
