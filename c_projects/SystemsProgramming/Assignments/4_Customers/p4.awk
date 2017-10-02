@@ -1,5 +1,4 @@
-# gawk -v date="blahhhh" -f p4.awk p4Customer.txt
-# using gawk to peform csv -> html manipulation
+# gawk -v date="10/1/2017" -f p4.awk p4Customer.txt
 # FS = Field Seperator
 # $0 = line, NF = end of line
 # ($1) Customer Email - email address also uniquely defines a customer
@@ -14,28 +13,28 @@
 # s/AMOUNT/$5-$4/g
 # s/DATE/date/g
 
-BEGIN { FS=","; }
+BEGIN { 
+  FS=","; 
+  # change mm/dd/yyyy -> mm\/dd\/yyyy to work with sed
+  gsub("/","\\\/",date); # returns num of matched occurences
+} 
 {
-    # printf("Print: %s\n", $);
-    if($5 > $4) {
-        # printf("Print: %s\n", $0);
-        # print $0;
-
-        amount = $5 - $4;
-        print "s/EMAIL/" $1 "/g" > "SedScripts/g" $1 ".sed";
-        print "s/TITLE/" $3 "/g" > "SedScripts/g" $1 ".sed";
-        print "s/FULLNAME/" $2 "/g" > "SedScripts/g" $1 ".sed";
-        print "s/NAME/" $2 "/g" > "SedScripts/g" $1 ".sed"; 
-        print "s/AMOUNT/" amount "/g" > "SedScripts/g" $1 ".sed"; 
-        # print "s/DATE/" date "/g"; 
-    }
-    # printf("\t<tr>\n");
-    # for(i=1; i <= NF; i++)
-    # {
-    #     #printf("i: %d, $i: %s\n", i, $i);
-    #     printf("\t\t<td>%s<\\td>\n", $i);
+  # Owe amount greater than paid amout
+  if($5 > $4) {
+    amount = $5 - $4; # Amount left to pay
+    # print $2;
+    len = split($2, name, " "); # Split full name by space separator to get last name only
+    # for (key in name) {
+    #   print key ":" name[key];
     # }
-    # printf("\t<\\tr>\n");
+    # Generate sed script to replace given phrases in a template email
+    print "s/EMAIL/" $1 "/g" > "SedScripts/g" $1 ".sed";
+    print "s/TITLE/" $3 "/g" > "SedScripts/g" $1 ".sed";
+    print "s/FULLNAME/" $2 "/g" > "SedScripts/g" $1 ".sed";
+    print "s/NAME/" name[len] "/g" > "SedScripts/g" $1 ".sed"; 
+    print "s/AMOUNT/" amount "/g" > "SedScripts/g" $1 ".sed"; 
+    print "s/DATE/" date "/g" > "SedScripts/g" $1 ".sed"; 
+  }
 }
 END { }
 
