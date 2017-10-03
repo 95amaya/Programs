@@ -10,7 +10,7 @@
 # s/TITLE/$3/g
 # s/FULLNAME/$2/g
 # s/NAME/$2/g
-# s/AMOUNT/$5-$4/g
+# s/AMOUNT/$5/g
 # s/DATE/date/g
 
 BEGIN { 
@@ -21,7 +21,6 @@ BEGIN {
 {
   # Owe amount greater than paid amout
   if($5 > $4) {
-    amount = $5 - $4; # Amount left to pay
     # print $2;
     len = split($2, name, " "); # Split full name by space separator to get last name only
     # for (key in name) {
@@ -32,7 +31,7 @@ BEGIN {
     print "s/TITLE/" $3 "/g" > "SedScripts/g" $1 ".sed";
     print "s/FULLNAME/" $2 "/g" > "SedScripts/g" $1 ".sed";
     print "s/NAME/" name[len] "/g" > "SedScripts/g" $1 ".sed"; 
-    print "s/AMOUNT/" amount "/g" > "SedScripts/g" $1 ".sed"; 
+    print "s/AMOUNT/" $5 "/g" > "SedScripts/g" $1 ".sed"; 
     print "s/DATE/" date "/g" > "SedScripts/g" $1 ".sed"; 
   }
 }
