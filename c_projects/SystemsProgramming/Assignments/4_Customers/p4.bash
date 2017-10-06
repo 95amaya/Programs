@@ -11,7 +11,9 @@ fi
 # duedate=${1//\//\\\/} # Convert date to mm\/dd\/yyyy for sed
 duedate=$1
 
-(cd $PWD/SedScripts && cd ../ ) 2>/dev/null || mkdir $PWD/SedScripts # check if directory already exists
+# check if script directory already exists
+cd $PWD/SedScripts 2>/dev/null && cd ../ && rm -r $PWD/SedScripts 2>/dev/null  # remove it
+mkdir $PWD/SedScripts 
 
 # Process customers who have not paid amount owed by generating sed scripts
 gawk -v date="$duedate" -f p4.awk p4Customer.txt 2>/dev/null # redirect stderr to suppress warning message
