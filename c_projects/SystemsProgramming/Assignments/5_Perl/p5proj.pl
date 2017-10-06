@@ -16,7 +16,7 @@ if(-d "./Emails") {
 print `mkdir ./Emails`;
 
 # Read from file
-open(INFILE, "<", "p4Customer.txt")
+open(INFILE, "<", "p5Customer.txt")
     or die "could not open INFILE: $!\n";
 
 while(my $line = <INFILE>) {
