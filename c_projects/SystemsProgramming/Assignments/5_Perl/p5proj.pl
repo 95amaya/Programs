@@ -2,6 +2,7 @@
 use strict;
 use warnings;
 # perl p5proj.pl mm/dd/yyyy
+
 if($#ARGV != 0) {
   print "usage: [DATE: mm/dd/yyyy]\n";
   die "Must specify a date\n";
