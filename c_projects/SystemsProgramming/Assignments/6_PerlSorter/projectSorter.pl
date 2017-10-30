@@ -30,7 +30,7 @@ foreach $file (@directory)
     {
         $assign =~ s/^proj(\w*)\..*/$1/;
         my $newDir = "assignment" . $assign;
-        print "Assign Directory: $newDir\n";
+        # print "Assign Directory: $newDir\n";
 
         if( not -d "./$ARGV[0]/$newDir" ) 
         {

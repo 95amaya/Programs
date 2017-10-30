@@ -13,11 +13,11 @@ if($#ARGV < 1) {
 my $regex;
 my $option = shift(@ARGV);
 
-print "option: $option\n";
+# print "option: $option\n";
 if( $option eq "-i" )
 {
     $regex = shift(@ARGV);
-    print "RegEx: $regex\n";
+    # print "RegEx: $regex\n";
     my $file;
     foreach $file (@ARGV)
     {
@@ -25,7 +25,7 @@ if( $option eq "-i" )
             print "Invalid Filename: $file\n";
             next;
         }
-        # if filename matches regular expression print file
+
         if( not $file =~ /$regex/ )
         {
             # Get file contents by line
@@ -39,7 +39,7 @@ if( $option eq "-i" )
                 if( $line =~ /$regex/ )
                 {
                      $check = 1; # Exit outer LOOP!
-                     last;
+                     last;       # break!
                 }
             }
             
