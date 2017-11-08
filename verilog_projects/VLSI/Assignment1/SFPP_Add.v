@@ -18,8 +18,11 @@ always@(*) begin
 		diff = (N1[30:23] - `BIAS) - (N2[30:23] - `BIAS);
         shift = diff ? ({1'b1, N2[22:1]}) >> (diff - 1'b1) : ({1'b1, N2[22:1]});
         if(signdiff) begin
-            {cout, sum} = diff ? (({1'b1,N1[22:0]} - {1'b0, shift}) << diff) : (N1[22:0] - N2[22:0]);
+//            $display("Made it diff %h, sign %h", diff, signdiff);
+            {cout, sum} = diff ? (({1'b1,N1[22:0]} - {1'b0, shift}) << diff) : ((N1[22:0] - N2[22:0]) << 1'b1); 
+//            $display("new Cout %b, new Sum %h", cout, sum);
             newexp = offset - cout + `BIAS;
+//            $display("new exponent %h", newexp);
         end
         else begin
             {cout, sum} = diff ? (N1[22:0] + shift) : ({1'b1,N1[22:1]} + shift);

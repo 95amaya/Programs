@@ -4,8 +4,10 @@
 `define MASK2 64'h000000FF00000000
 
 module Test_tb(); 
-    reg [63:0] A, B;
-    wire [127:0] Output;
+//    reg [31:0] A, B; 
+//    wire [63:0] Output;
+    reg [63:0] A, B; //63
+    wire [127:0] Output; //127
     integer i;
 	
 	// 16-64-bit unsigned multiplier
