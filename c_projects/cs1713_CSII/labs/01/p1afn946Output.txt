@@ -1,0 +1,49 @@
+********************Library Receipt********************
+111111 petem@xyz.net Pete Moss (previously owed 0.75)
+123 Boggy Lane
+New Orleans LA 70112
+Transaction Record:
+Trans  Book       Date      
+  C    JOYPGM001  2016-01-25
+  C    TECHDR001  2016-01-25
+********************Library Receipt********************
+222222 pcorn@abc.net Pop Corn (previously owed 0.00)
+456 Kernel
+San Antonio TX 78210
+Transaction Record:
+Trans  Book       Date      
+  C    TECHDR001  2016-01-25
+  C    TECHDR002  2016-01-25
+  C    JOYPGM004  2016-01-25
+********************Library Receipt********************
+333333 pennyl@xyz.net Penny Loafer (previously owed 44.00)
+789 Walking St
+Philadelphia PA 19102
+Transaction Record:
+Trans  Book       Date      
+  R    LINUXX004  2016-01-25
+  C    PERLLL001  2016-01-25
+********************Library Receipt********************
+444444 hgilmore@xyz.net Adam Sandler (previously owed 1.25)
+444 Golf View
+Hollywood CA 92274
+Transaction Record:
+Trans  Book       Date      
+  R    EXCELL001  2016-01-25
+********************Library Receipt********************
+555555 butter@xyz.net Melba Toast (previously owed 0.00)
+222 Cracker Blvd
+San Antonio TX 78222
+Transaction Record:
+Trans  Book       Date      
+  R    SQLDBB001  2016-02-29
+  C    LINUXX004  2016-02-29
+********************Library Receipt********************
+666666 joeK@xyz.net Joe King (previously owed 5.55)
+456 Laughing Way
+Zigzag OR 97049
+Transaction Record:
+Trans  Book       Date      
+  C    JOYPGM003  2015-04-31
+  C    PRANKS001  2015-04-01
+

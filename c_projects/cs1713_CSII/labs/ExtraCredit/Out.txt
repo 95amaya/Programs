@@ -1,0 +1,5 @@
+
+Polynomial 1 as a linked list: 3x^6 + 2x^3 + 1
+Polynomial 2 as a linked list: 8x^14 + -3x^6 + 10x^4 + 5x^3
+
+Added Linked list: 8x^14 + 10x^4 + 7x^3 + 1

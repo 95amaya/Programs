@@ -1,0 +1,150 @@
+Initial Books
+   Book Id   Title                                    Customer Ck Out Dt  Late Fee Max Late 
+   ARTINT001 A.I. Practical Algorithms                333333   2015-11-15     0.30    55.00 
+   COBOLL001 How your Grandpa Coded in COBOL          NONE     0000-00-00     0.10    10.00 
+   EXCELL001 Excel at Excell                          444444   2015-09-01     0.80    65.00 
+   JAVADD001 Java Isn't an Addiction                  777777   2016-02-01     0.30    60.00 
+   JOYPGM001 The Joys of Programming                  NONE     0000-00-00     0.25    50.00 
+   JOYPGM002 The Joys of Programming                  333333   2016-01-05     0.25    50.00 
+   JOYPGM003 The Joys of Programming                  NONE     0000-00-00     0.25    50.00 
+   JOYPGM004 The Joys of Programming                  NONE     0000-00-00     0.25    50.00 
+   LINUXX004 Learning Linux                           333333   2016-01-05     0.30    60.00 
+   PERLLL001 Is PERL the Jewel of Programming?        NONE     0000-00-00     0.10    10.00 
+   PRANKS001 Software Pranks                          NONE     0000-00-00     0.90    60.00 
+   PYTHON001 Learn Python Without Getting Bit         111111   2016-01-02     0.30    60.00 
+   PYTHON002 Learn Python Without Getting Bit         NONE     0000-00-00     0.30    60.00 
+   SQLDBB001 Making Your DB Queries SQueeL            555555   2016-02-16     0.30    60.00 
+   TECHDR001 My Technical Dream Job                   NONE     0000-00-00     0.25    50.00 
+
+
+CUSTOMER BEGIN 111111 0.75 petem@xyz.net Pete Moss
+CUSTOMER ADDRESS 123 Boggy Lane,New Orleans,LA,70112
+*************************Library Receipt*************************
+111111 petem@xyz.net Pete Moss (previously owed 0.75)
+123 Boggy Lane
+New Orleans, LA 70112
+					Trans  Book       Date      
+CUSTOMER TRANS C JOYPGM001 2016-01-25
+                                          C    JOYPGM001  2016-01-25	
+CUSTOMER TRANS C TECHDR001 2016-01-25 
+                                          C    TECHDR001  2016-01-25	
+CUSTOMER TRANS R PYTHON001 2016-01-25      
+                                          R    PYTHON001  2016-01-25	 Late Fee = 2.70
+CUSTOMER COMPLETE
+					                               Total Fees = 3.45
+CUSTOMER BEGIN 222222 0.00 pcorn@abc.net Pop Corn
+CUSTOMER ADDRESS 456 Kernel,San Antonio,TX,78210
+*************************Library Receipt*************************
+222222 pcorn@abc.net Pop Corn (previously owed 0.00)
+456 Kernel
+San Antonio, TX 78210
+					Trans  Book       Date      
+CUSTOMER TRANS C TECHDR001 2016-01-25 
+                                          C    TECHDR001  2016-01-25	 *** Already Checked Out	
+CUSTOMER TRANS C TECHDR002 2016-01-25
+                                          C    TECHDR002  2016-01-25	 *** Book Not Found	
+CUSTOMER TRANS C JOYPGM004 2016-01-25      
+                                          C    JOYPGM004  2016-01-25	
+CUSTOMER COMPLETE
+					                               Total Fees = 0.00
+CUSTOMER BEGIN 333333 44.00 pennyl@xyz.net Penny Loafer
+CUSTOMER ADDRESS 789 Walking St,Philadelphia,PA,19102
+*************************Library Receipt*************************
+333333 pennyl@xyz.net Penny Loafer (previously owed 44.00)
+789 Walking St
+Philadelphia, PA 19102
+					Trans  Book       Date      
+CUSTOMER TRANS R LINUXX004 2016-01-25
+                                          R    LINUXX004  2016-01-25	 Late Fee = 1.80
+CUSTOMER TRANS C PERLLL001 2016-01-25
+                                          C    PERLLL001  2016-01-25	
+CUSTOMER TRANS R ARTINT001 2016-01-25
+                                          R    ARTINT001  2016-01-25	 Late Fee = 17.10
+CUSTOMER COMPLETE
+					                               Total Fees = 62.90
+CUSTOMER BEGIN 444444 1.25 hgilmore@xyz.net Adam Sandler
+CUSTOMER ADDRESS 444 Golf View,Hollywood,CA,92274
+*************************Library Receipt*************************
+444444 hgilmore@xyz.net Adam Sandler (previously owed 1.25)
+444 Golf View
+Hollywood, CA 92274
+					Trans  Book       Date      
+CUSTOMER TRANS R EXCELL001 2016-01-25
+                                          R    EXCELL001  2016-01-25	 Late Fee = 65.00
+CUSTOMER COMPLETE
+					                               Total Fees = 66.25
+CUSTOMER BEGIN 555555 0.00 butter@xyz.net Melba Toast
+CUSTOMER ADDRESS 222 Cracker Blvd,San Antonio,TX,78222
+*************************Library Receipt*************************
+555555 butter@xyz.net Melba Toast (previously owed 0.00)
+222 Cracker Blvd
+San Antonio, TX 78222
+					Trans  Book       Date      
+CUSTOMER TRANS R SQLDBB001 2016-02-29
+                                          R    SQLDBB001  2016-02-29	 Late Fee = 0.00
+CUSTOMER TRANS C LINUXX004 2016-02-29  
+                                          C    LINUXX004  2016-02-29	
+CUSTOMER COMPLETE
+					                               Total Fees = 0.00
+CUSTOMER BEGIN 666666 5.55 joeK@xyz.net Joe King
+CUSTOMER ADDRESS 456 Laughing Way,Zigzag,OR,97049
+*************************Library Receipt*************************
+666666 joeK@xyz.net Joe King (previously owed 5.55)
+456 Laughing Way
+Zigzag, OR 97049
+					Trans  Book       Date      
+CUSTOMER TRANS C JOYPGM003 2016-03-01
+                                          C    JOYPGM003  2016-03-01	
+CUSTOMER TRANS C PRANKS001 2016-03-01
+                                          C    PRANKS001  2016-03-01	
+CUSTOMER COMPLETE
+					                               Total Fees = 5.55
+BOOK CHANGE XXXXXX001 0.25 50.00
+  ** Book Not Found
+
+BOOK SHOW XXXXXX001 
+  ** Book Not Found
+
+BOOK CHANGE JAVADD001 0.25 50.00
+
+BOOK SHOW JAVADD001 
+   JAVADD001 Java Isn't an Addiction                  777777   2016-02-01     0.25    50.00 
+
+BOOK NEW SQLDBB001 NONE 0000-00-00 0.30 60.00 Making Your DB Queries SQueeL
+			*** Book Already Exists
+
+BOOK NEW SQLDBB002 NONE 0000-00-00 0.30 60.00 Making Your DB Queries SQueeL
+
+CUSTOMER BEGIN 777777 7.50 rockBoat@xyz.net Rock D Boat
+CUSTOMER ADDRESS 765 Ocean Blvd,Corpus Christi,TX,78412
+*************************Library Receipt*************************
+777777 rockBoat@xyz.net Rock D Boat (previously owed 7.50)
+765 Ocean Blvd
+Corpus Christi, TX 78412
+					Trans  Book       Date      
+CUSTOMER TRANS R JAVADD001 2016-03-01
+                                          R    JAVADD001  2016-03-01	 Late Fee = 3.75
+CUSTOMER TRANS C PRANKS001 2016-03-01
+                                          C    PRANKS001  2016-03-01	 *** Already Checked Out	
+CUSTOMER COMPLETE
+					                               Total Fees = 11.25
+Resulting Books
+   Book Id   Title                                    Customer Ck Out Dt  Late Fee Max Late 
+   ARTINT001 A.I. Practical Algorithms                NONE     0000-00-00     0.30    55.00 
+   COBOLL001 How your Grandpa Coded in COBOL          NONE     0000-00-00     0.10    10.00 
+   EXCELL001 Excel at Excell                          NONE     0000-00-00     0.80    65.00 
+   JAVADD001 Java Isn't an Addiction                  NONE     0000-00-00     0.25    50.00 
+   JOYPGM001 The Joys of Programming                  111111   2016-01-25     0.25    50.00 
+   JOYPGM002 The Joys of Programming                  333333   2016-01-05     0.25    50.00 
+   JOYPGM003 The Joys of Programming                  666666   2016-03-01     0.25    50.00 
+   JOYPGM004 The Joys of Programming                  222222   2016-01-25     0.25    50.00 
+   LINUXX004 Learning Linux                           555555   2016-02-29     0.30    60.00 
+   PERLLL001 Is PERL the Jewel of Programming?        333333   2016-01-25     0.10    10.00 
+   PRANKS001 Software Pranks                          666666   2016-03-01     0.90    60.00 
+   PYTHON001 Learn Python Without Getting Bit         NONE     0000-00-00     0.30    60.00 
+   PYTHON002 Learn Python Without Getting Bit         NONE     0000-00-00     0.30    60.00 
+   SQLDBB001 Making Your DB Queries SQueeL            NONE     0000-00-00     0.30    60.00 
+   SQLDBB002 Making Your DB Queries SQueeL            NONE     0000-00-00     0.30    60.00 
+   TECHDR001 My Technical Dream Job                   111111   2016-01-25     0.25    50.00 
+
+
