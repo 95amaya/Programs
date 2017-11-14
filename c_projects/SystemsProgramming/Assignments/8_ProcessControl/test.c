@@ -56,9 +56,9 @@ int concCmd (Cmd cmdM[], int iCmdCnt, Token tokenM[], int iTokenCnt) {
     printf("Command  ArgBeg   ArgEnd  Redirect(in/out)  ->   Path\n");
     for (i = 0; i < iCmdCnt; i +=1)
     {
-        printf("%5s %6s %11s %5d / %2d ->%20s\n"
-            , cmdM[i].szCmdNm, tokenM[cmdM[i].iBeginIdx], tokenM[cmdM[i].iEndIdx]
-            , cmdM[i].iStdinRedirectIdx, cmdM[i].iStdoutRedirectIdx, tokenM[cmdM[i].iStdoutRedirectIdx]);
+        // printf("%5s %6s %11s %5d / %2d ->%20s\n"
+        //     , cmdM[i].szCmdNm, tokenM[cmdM[i].iBeginIdx], tokenM[cmdM[i].iEndIdx]
+        //     , cmdM[i].iStdinRedirectIdx, cmdM[i].iStdoutRedirectIdx, tokenM[cmdM[i].iStdoutRedirectIdx]);
     
         // start code
         long lForkPid;
@@ -82,26 +82,35 @@ int concCmd (Cmd cmdM[], int iCmdCnt, Token tokenM[], int iTokenCnt) {
                 // printf("Child Process: PID=%ld, PPID=%ld\n"
                 //     , (long) getpid(), (long) getppid());
                 // Redirect stdout to file
-                int file = open(redirPath, O_CREAT | O_WRONLY, 0666); // output file
-                if(file < 0)    
+                int k;
+                int iCnt = 1;
+                int ifile = open(redirPath, O_CREAT | O_WRONLY, 0666); // output file
+                if(ifile < 0)    
                 {
                     printf("File open error\n");
                     return 1;
                 }
                 //Now we redirect standard output to the file using dup2
-                if(dup2(file,1) < 0)
+                if(dup2(ifile,1) < 0)
                 {
                     printf("Dup error exit\n");   
                     return 1;
                 }
                 // invoke a different executable for the child
                 execArgv[0] = cmdM[i].szCmdNm; // command
+                // printf("iCnt: %d\n", iCnt);
                 // For loop begin index -> end index
+                for(k = cmdM[i].iBeginIdx; k <= cmdM[i].iEndIdx; k++) {
+                    // execArgv[iCnt] = tokenM[j]; // arg list
+                    printf("iCnt: %d, token: %s\n", iCnt, tokenM[k]);
+                    iCnt++;
+                }
+                // execArgv[iCnt] = NULL; // null
                 execArgv[1] = tokenM[cmdM[i].iBeginIdx]; // flag list
                 execArgv[2] = tokenM[cmdM[i].iEndIdx]; // path
                 execArgv[3] = NULL; // null
                 execvp(cmdM[i].szCmdNm, execArgv); // command
-                close(file);
+                close(ifile);
                 errExit("Child process failed to exec: %s", strerror(errno));
             default: // parent process
                 lWaitPid = wait (&iExitStatus);

@@ -29,8 +29,8 @@ typedef struct Cmd
                                   // there is redirection, this subscript would be
                                   // before that.  (this is -1 for no arguments)
     char szCmdNm[MAX_TOKEN_SZ+1]; // command name (e.g., ls)
-    char iStdinRedirectIdx;       // Subscript in tokenM for the stdin redirect; 0 for no redirect
-    char iStdoutRedirectIdx;      // Subscript in tokenM for the stdout redirect; 0 for no redirect
+    int iStdinRedirectIdx;       // Subscript in tokenM for the stdin redirect; 0 for no redirect
+    int iStdoutRedirectIdx;      // Subscript in tokenM for the stdout redirect; 0 for no redirect
 }Cmd;
 typedef char Token [MAX_TOKEN_SZ+1];
 int concCmd (Cmd cmdM[], int iCmdCnt, Token tokenM[], int iTokenCnt);

@@ -1,5 +1,5 @@
 CFLAGS = gcc -g
-#OBJ = cs3423p8Driver.o cs3423p8.o errExit.o
+# OBJ = cs3423p8Driver.o cs3423p8.o errExit.o
 OBJ = cs3423p8Driver.o test.o errExit.o
 
 # Automatic substitution using suffix rules to
