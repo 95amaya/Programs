@@ -21,8 +21,8 @@ int main () {
                 errExit("Failed to rediect stdout for 'ls': %s"
                     , strerror(errno));
             close(fdM[0]); close(fdM[1]);
-            execl("/bin/ls", "ls", "-l", "/usr/bin", NULL);
-            errExit("Failed to exec 'ls -l /usr/bin': %s"
+            execl("/bin/ls", "ls", "-l", "/usr", NULL);
+            errExit("Failed to exec 'ls -l /usr': %s"
                 , strerror(errno));
         default: // parent process
             // create the other child

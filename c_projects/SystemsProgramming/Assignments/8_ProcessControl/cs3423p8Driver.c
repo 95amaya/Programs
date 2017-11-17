@@ -96,7 +96,7 @@ void processCommands(FILE *pfileCommand)
             printf("%s", szInputBuffer);
             continue;       // it was just a comment
         }
-        printf(">>> %s", szInputBuffer);
+        // printf(">>> %s", szInputBuffer);
         // split the line based on spaces
         iTokenCnt = split(tokenM, MAX_TOKENS, szInputBuffer, ' ');
         // print the tokens

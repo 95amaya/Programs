@@ -1,0 +1,6 @@
+Data/two: stdin
+1 Data/one: stdin
+2 1 one line 1
+3 2 one line two
+4 3 one line 3
+5 4 one line 4

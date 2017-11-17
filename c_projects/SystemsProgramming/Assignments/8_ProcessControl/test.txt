@@ -1,1 +1,2 @@
-conc ls -l /bin > Dout/concBin.txt , ls -l /usr/bin > Dout/concUsrBin.txt , ls -l /etc > Dout/concEtc.txt
+pipe ls -l ./Data , sort -k5 -n > Dout/pipeSort.out
+pipe Data/one < Data/oneIn.txt , Data/two > Dout/pipeTwo.out
