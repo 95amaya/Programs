@@ -1,2 +1,0 @@
-pipe ls -l ./Data , sort -k5 -n > Dout/pipeSort.out
-pipe Data/one < Data/oneIn.txt , Data/two > Dout/pipeTwo.out
